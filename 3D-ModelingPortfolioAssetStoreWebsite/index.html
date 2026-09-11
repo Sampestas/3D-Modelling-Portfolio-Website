@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Awesome Potatoes</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <link rel="icon" href="data:,">
+
+        <link rel="stylesheet" href="css/main.css">
+
+        <script type="module" src="https://googleapis.com"></script> <!--Model viewer import-->
+    </head>
+    <body>
+        <div>
+            <header class="site-header">
+                <h1 class="logo">
+                    <a href="#">Sampestas</a>
+                </h1>
+
+                <nav class="nav-menu" aria-label="Main Navigation">
+                    <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </header>
+
+            <section id="home"><h1>Home Section</h1>
+                <div class="container">
+                    <model-viewer 
+                        src="pedestal.glb" 
+                        ar 
+                        camera-controls 
+                        touch-action="pan-y" 
+                        shadow-intensity="1" 
+                        auto-rotate>
+                    </model-viewer>
+                </div>
+            </section>
+
+            
+            <section id="about"><h1>About Section</h1></section>
+            <section id="services"><h1>Services Section</h1></section>
+            <section id="contact"><h1>Contact Section</h1></section>
+
+
+            
+            <hr class="gradient">
+            <p>what are we doing bro</p>
+            <p> now fr wth</p>
+            <h1>Potatoes are vegetables yeah thats real <br>
+                because you are a complete <span class="highlight">moron</span> i ain't going to lie
+            </h1>
+        </div>
+    </body>
+</html>

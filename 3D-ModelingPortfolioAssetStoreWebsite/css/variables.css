@@ -1,0 +1,10 @@
+:root {
+    --colors-main-text: rgb(252, 247, 255);
+    --colors-highlight-text: rgb(255, 229, 158);
+    --colors-accent: #c976f0;
+    --colors-accent-dark: #7f35a1;
+    --colors-divider: rgb(252, 209, 69);
+    --black-matte: rgba(20, 20, 20, 0.4);
+
+    --main-bg-gradient: linear-gradient(#9a66b3, #684b75);
+}
