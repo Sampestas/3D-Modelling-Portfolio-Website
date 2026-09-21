@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>Sampestas - 3D-Modeler Portfolio</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" href="data:,">
         <link rel="stylesheet" href="css/main.css">
     </head>
@@ -25,20 +25,70 @@
         </header>
 
         <main>
-            <section id="home">
-                <h1>Home Section</h1>
-            </section>
-            <section id="about">
-                <h1>About Section</h1>
-            </section>
-            <section id="services">
-                <h1>Services Section</h1>
-            </section>
             <section id="portfolio">
-                <h1>Portfolio Section</h1>
-            </section>
-            <section id="contact">
-                <h1>Contact Section</h1>
+                <div class="section-header">
+                    <h2>My Showcase<span class="highlight">.</span></h2>
+                    <p>A collection of props, environments, and clean topology built natively inside Blender.</p>
+                </div>
+
+                <div class="bento-grid">
+                    <!-- Card 1: Main Feature (Large landscape display) -->
+                    <div class="bento-item wide featured">
+                        <div class="card-media">
+                            <!-- Replace with your actual render path -->
+                            <img src="assets/images/hero_render.jpg" alt="Cyberpunk Street Scene Environment">
+                        </div>
+                        <div class="card-info">
+                            <span class="category">Environment Design</span>
+                            <h3>Neon Alleyway Project</h3>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Square Showcase (Topology Switch) -->
+                    <div class="bento-item interactive-wire">
+                        <div class="card-media">
+                            <img src="assets/images/character_render.jpg" alt="Final Model Render" class="render-view">
+                            <img src="assets/images/character_wire.jpg" alt="Wireframe Topology" class="wire-view">
+                        </div>
+                        <div class="card-info">
+                            <span class="category">Character Model</span>
+                            <h3>Mech Warrior (Hover for Wireframe)</h3>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Vertical Asset Card -->
+                    <div class="bento-item tall">
+                        <div class="card-media">
+                            <img src="assets/images/sword_prop.jpg" alt="High Poly Weapon Render">
+                        </div>
+                        <div class="card-info">
+                            <span class="category">Prop Modeling</span>
+                            <h3>Crystalline Greatsword</h3>
+                        </div>
+                    </div>
+
+                    <!-- Card 4: Small Square Detail Spot -->
+                    <div class="bento-item">
+                        <div class="card-media">
+                            <img src="assets/images/material_sphere.jpg" alt="Procedural Texture Close Up">
+                        </div>
+                        <div class="card-info">
+                            <span class="category">Procedural Shading</span>
+                            <h3>Smart Materials</h3>
+                        </div>
+                    </div>
+
+                    <!-- Card 5: Another Wide Project Highlight -->
+                    <div class="bento-item wide">
+                        <div class="card-media">
+                            <img src="assets/images/vehicle_render.jpg" alt="Hard Surface Vehicle Model">
+                        </div>
+                        <div class="card-info">
+                            <span class="category">Hard Surface</span>
+                            <h3>Sci-Fi Fighter Drone</h3>
+                        </div>
+                    </div>
+                </div>
             </section>
         </main>
     </body>

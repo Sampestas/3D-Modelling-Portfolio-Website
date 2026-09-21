@@ -1,0 +1,491 @@
+This file is a merged representation of the entire codebase, combined into a single document by Repomix.
+
+<file_summary>
+This section contains a summary of this file.
+
+<purpose>
+This file contains a packed representation of the entire repository's contents.
+It is designed to be easily consumable by AI systems for analysis, code review,
+or other automated processes.
+</purpose>
+
+<file_format>
+The content is organized as follows:
+1. This summary section
+2. Repository information
+3. Directory structure
+4. Repository files (if enabled)
+5. Multiple file entries, each consisting of:
+  - File path as an attribute
+  - Full contents of the file
+</file_format>
+
+<usage_guidelines>
+- This file should be treated as read-only. Any changes should be made to the
+  original repository files, not this packed version.
+- When processing this file, use the file path to distinguish
+  between different files in the repository.
+- Be aware that this file may contain sensitive information. Handle it with
+  the same level of security as you would the original repository.
+</usage_guidelines>
+
+<notes>
+- Some files may have been excluded based on .gitignore rules and Repomix's configuration
+- Binary files are not included in this packed representation. Please refer to the Repository Structure section for a complete list of file paths, including binary files
+- Files matching patterns in .gitignore are excluded
+- Files matching default ignore patterns are excluded
+- Files are sorted by Git change count (files with more changes are at the bottom)
+</notes>
+
+</file_summary>
+
+<directory_structure>
+assets/
+  images/
+    website_logo_portfolio.png
+css/
+  base.css
+  elements.css
+  main.css
+  variables.css
+index.html
+LICENSE
+</directory_structure>
+
+<files>
+This section contains the contents of the repository's files.
+
+<file path="css/main.css">
+@import "variables.css";
+
+@import "base.css";
+@import "elements.css";
+</file>
+
+<file path="LICENSE">
+MIT License
+
+Copyright (c) 2026 Sampestas
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+</file>
+
+<file path="css/elements.css">
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  
+  background-color: var(--black-matte);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 0.25rem 2rem rgba(0, 0, 0, 0.2);
+}
+
+.brand-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+
+.logo-img {
+  height: 3.5rem;
+  width: auto;
+  object-fit: contain;
+}
+
+.nickname {
+  display: inline-block;
+  color: var(--colors-main-text);
+  font-size: 2.2rem;
+  font-weight: bold;
+  transition: color 0.4s ease;
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 2.5rem;
+}
+
+.nav-link {
+  display: inline-block;
+  color: var(--colors-main-text);
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: 500;
+  transition: color 0.4s ease, transform 0.3s ease;
+}
+
+.brand-link:hover .nickname,
+.nav-link:hover {
+  color: var(--colors-accent);
+}
+
+.brand-link:hover,
+.nav-link:hover {
+  transform: scale(1.05);
+}
+
+.brand-link:active,
+.nav-link:active {
+  transform: scale(0.98);
+  transition: color 0.1s ease;
+}
+.brand-link:active .nickname {
+  color: var(--colors-accent-dark);
+}
+.nav-link:active {
+  color: var(--colors-accent-dark);
+}
+
+
+section {
+  padding: 100px 2rem;
+  height: 100vh;
+  box-sizing: border-box;
+  scroll-margin-top: 1rem; 
+}
+
+hr {
+  border: none;
+  height: 4px;
+  background-color: var(--colors-divider);
+  width: 50%;
+  margin: 30px auto;
+}
+
+hr.gradient {
+  border: 0;
+  height: 4px;
+  width: 80%;
+  margin: 24px auto;
+  
+  background-color: var(--colors-divider); 
+
+  -webkit-mask-image: linear-gradient(
+    to right, 
+    transparent 0%, 
+    black 25%, 
+    black 75%, 
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right, 
+    transparent 0%, 
+    black 25%, 
+    black 75%, 
+    transparent 100%
+  );
+}
+
+.highlight {
+    color: var(--colors-highlight-text);
+}
+
+
+.section-header {
+    margin-bottom: 3rem;
+    text-align: left;
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.section-header p {
+    color: var(--colors-sub-text);
+    font-size: 1.1rem;
+}
+
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.bento-item {
+    background-color: var(--bg-card);
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.bento-item.wide {
+    grid-column: span 2;
+}
+
+.bento-item.tall {
+    grid-row: span 2;
+}
+
+.card-media {
+    position: relative;
+    width: 100%;
+    flex-grow: 1;
+    overflow: hidden;
+    background-color: #100a1a;
+}
+
+.card-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-info {
+    padding: 1.5rem;
+    background: linear-gradient(to top, rgba(11, 7, 17, 0.95) 0%, rgba(11, 7, 17, 0) 100%);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.card-info .category {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--colors-accent);
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+    display: inline-block;
+}
+
+.card-info h3 {
+    font-size: 1.3rem;
+    color: var(--colors-main-text);
+}
+
+.bento-item:hover {
+    transform: translateY(-5px);
+    border-color: rgba(201, 118, 240, 0.3);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+.bento-item:hover .card-media img {
+    transform: scale(1.03);
+}
+
+.interactive-wire .wire-view {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+
+.interactive-wire:hover .wire-view {
+    opacity: 1;
+}
+
+@media (max-width: 900px) {
+    .bento-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .bento-item.wide {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 600px) {
+    .bento-grid {
+        grid-template-columns: 1fr;
+    }
+    .bento-item.wide, .bento-item.tall {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+    section {
+        padding: 100px 1rem 40px 1rem;
+    }
+}
+</file>
+
+<file path="css/variables.css">
+:root {
+    --colors-main-text: #f8fafc;
+    --colors-sub-text: #94a3b8;
+    --colors-highlight-text: #ffe59e;
+    --colors-accent: #c976f0;
+    --colors-accent-dark: #7f35a1;
+    --colors-divider: rgba(201, 118, 240, 0.2);
+
+    --bg-main: #0b0711;
+    --bg-card: #160f22;
+    --bg-card-hover: #1f1530;
+    --black-matte: rgba(11, 7, 17, 0.75);
+}
+</file>
+
+<file path="css/base.css">
+html {
+    font-size: 16px; 
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--colors-main-text);
+    margin: 0;
+    min-height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    touch-action: manipulation; 
+}
+
+section {
+    padding: 120px 2rem 60px 2rem;
+    min-height: 100vh;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+</file>
+
+<file path="index.html">
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Sampestas - 3D-Modeler Portfolio</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <link rel="icon" href="data:,">
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+    <body>
+        <header class="site-header">
+            <a href="#" class="brand-link" aria-label="Homepage">
+                <img src="assets/images/website_logo_portfolio.png" alt="Logo" class="logo-img">
+                <strong class="nickname">Sampestas<span class="highlight">.</span></strong>
+            </a>
+
+            <nav class="navigation">
+                <ul class="nav-list">
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#services" class="nav-link">Services</a></li>
+                    <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section id="portfolio">
+                <div class="section-header">
+                    <h2>My Showcase<span class="highlight">.</span></h2>
+                    <p>A collection of props, environments, and clean topology built natively inside Blender.</p>
+                </div>
+
+                <div class="bento-grid">
+                    <!-- Card 1: Main Feature (Large landscape display) -->
+                    <div class="bento-item wide featured">
+                        <div class="card-media">
+                            <!-- Replace with your actual render path -->
+                            <img src="assets/images/hero_render.jpg" alt="Cyberpunk Street Scene Environment">
+                        </div>
+                        <div class="card-info">
+                            <span class="category">Environment Design</span>
+                            <h3>Neon Alleyway Project</h3>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Square Showcase (Topology Switch) -->
+                    <div class="bento-item interactive-wire">
+                        <div class="card-media">
+                            <img src="assets/images/character_render.jpg" alt="Final Model Render" class="render-view">
+                            <img src="assets/images/character_wire.jpg" alt="Wireframe Topology" class="wire-view">
+                        </div>
+                        <div class="card-info">
+                            <span class="category">Character Model</span>
+                            <h3>Mech Warrior (Hover for Wireframe)</h3>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Vertical Asset Card -->
+                    <div class="bento-item tall">
+                        <div class="card-media">
+                            <img src="assets/images/sword_prop.jpg" alt="High Poly Weapon Render">
+                        </div>
+                        <div class="card-info">
+                            <span class="category">Prop Modeling</span>
+                            <h3>Crystalline Greatsword</h3>
+                        </div>
+                    </div>
+
+                    <!-- Card 4: Small Square Detail Spot -->
+                    <div class="bento-item">
+                        <div class="card-media">
+                            <img src="assets/images/material_sphere.jpg" alt="Procedural Texture Close Up">
+                        </div>
+                        <div class="card-info">
+                            <span class="category">Procedural Shading</span>
+                            <h3>Smart Materials</h3>
+                        </div>
+                    </div>
+
+                    <!-- Card 5: Another Wide Project Highlight -->
+                    <div class="bento-item wide">
+                        <div class="card-media">
+                            <img src="assets/images/vehicle_render.jpg" alt="Hard Surface Vehicle Model">
+                        </div>
+                        <div class="card-info">
+                            <span class="category">Hard Surface</span>
+                            <h3>Sci-Fi Fighter Drone</h3>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </body>
+</html>
+</file>
+
+</files>

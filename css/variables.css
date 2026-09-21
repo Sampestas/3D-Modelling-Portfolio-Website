@@ -1,10 +1,13 @@
 :root {
-    --colors-main-text: rgb(252, 247, 255);
-    --colors-highlight-text: rgb(255, 229, 158);
+    --colors-main-text: #f8fafc;
+    --colors-sub-text: #94a3b8;
+    --colors-highlight-text: #ffe59e;
     --colors-accent: #c976f0;
     --colors-accent-dark: #7f35a1;
-    --colors-divider: rgb(252, 209, 69);
-    --black-matte: rgba(19, 4, 26, 0.45);
+    --colors-divider: rgba(201, 118, 240, 0.2);
 
-    --main-bg-gradient: linear-gradient(#9a66b3, #684b75);
+    --bg-main: #0b0711;
+    --bg-card: #160f22;
+    --bg-card-hover: #1f1530;
+    --black-matte: rgba(11, 7, 17, 0.75);
 }
