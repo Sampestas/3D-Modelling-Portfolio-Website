@@ -140,6 +140,57 @@ hr.gradient {
     grid-row: span 2;
 }
 
+.bento-item.interactive-wire .card-media img {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+    object-position: center 20%; 
+    
+    transform: scale(0.97);
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
+}
+
+.bento-item.interactive-wire .card-media {
+    background-color: #3b3b3b; /* Вставьте сюда ТОЧНЫЙ цвет фона из Blender (похож на #333333 или #2b2b2b) */
+}
+
+.bento-item.interactive-wire:hover .card-media img:not(.wire-view) {
+    transform: scale(0.99); 
+}
+
+
+.interactive-wire .render-view {
+    opacity: 1;
+    z-index: 1;
+    transition: opacity 0.3s ease;
+}
+
+.interactive-wire .wire-view {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: 2;
+    transition: opacity 0.3s ease;
+}
+
+.interactive-wire:hover .render-view,
+.interactive-wire.active-tap .render-view {
+    opacity: 0;
+}
+
+.interactive-wire:hover .wire-view,
+.interactive-wire.active-tap .wire-view {
+    opacity: 1;
+}
+
+
 .card-media {
     position: relative;
     width: 100%;
