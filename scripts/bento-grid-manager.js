@@ -1,18 +1,35 @@
-export function init_wireframe_view_for_mobile(){
-    const interactiveWireCard = document.querySelector(".interactive-wire");
-    
-    if (interactiveWireCard) {
-        interactiveWireCard.addEventListener("touchstart", function() {
-            this.classList.toggle("active-tap");
-        }, { passive: true });
-    }
+export function init_wireframe_view_for_mobile() {
+    const cards = document.querySelectorAll(".interactive-wire");
 
-    const header = document.querySelector(".site-header");
-    window.addEventListener("scroll", () => {
-        if (window.scrollY > 50) {
-            header.style.backgroundColor = "rgba(11, 7, 17, 0.95)";
+    cards.forEach((card) => {
+        const showWire = () => card.classList.add("active-tap");
+        const hideWire = () => card.classList.remove("active-tap");
+
+        if (window.PointerEvent) {
+            card.addEventListener("pointerdown", (e) => {
+                if (e.pointerType === "mouse") return;
+                showWire();
+            });
+
+            card.addEventListener("pointerup", (e) => {
+                if (e.pointerType === "mouse") return;
+                hideWire();
+            });
+
+            card.addEventListener("pointercancel", hideWire);
+            card.addEventListener("pointerleave", hideWire);
         } else {
-            header.style.backgroundColor = "var(--black-matte)";
+            card.addEventListener("touchstart", showWire, { passive: true });
+            card.addEventListener("touchend", hideWire, { passive: true });
+            card.addEventListener("touchcancel", hideWire, { passive: true });
         }
     });
+
+    const header = document.querySelector(".site-header");
+    if (header) {
+        window.addEventListener("scroll", () => {
+            header.style.backgroundColor =
+                window.scrollY > 50 ? "rgba(11, 7, 17, 0.95)" : "";
+        });
+    }
 }
