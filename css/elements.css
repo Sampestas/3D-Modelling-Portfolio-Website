@@ -1,14 +1,14 @@
-
 .site-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
+  padding: 1rem 5%;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 1000;
+  box-sizing: border-box;
   
   background-color: var(--black-matte);
   backdrop-filter: blur(10px);
@@ -25,7 +25,7 @@
 }
 
 .logo-img {
-  height: 3.5rem;
+  height: clamp(2.5rem, 5vw, 3.5rem);
   width: auto;
   object-fit: contain;
 }
@@ -33,7 +33,7 @@
 .nickname {
   display: inline-block;
   color: var(--colors-main-text);
-  font-size: 2.2rem;
+  font-size: clamp(1.4rem, 4vw, 2.2rem);
   font-weight: bold;
   transition: color 0.4s ease;
 }
@@ -43,14 +43,14 @@
   list-style: none;
   margin: 0;
   padding: 0;
-  gap: 2.5rem;
+  gap: clamp(1rem, 3vw, 2.5rem);
 }
 
 .nav-link {
   display: inline-block;
   color: var(--colors-main-text);
   text-decoration: none;
-  font-size: 1.5rem;
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
   font-weight: 500;
   transition: color 0.4s ease, transform 0.3s ease;
 }
@@ -62,13 +62,12 @@
 
 .brand-link:hover,
 .nav-link:hover {
-  transform: scale(1.05);
+  transform: scale(1.03);
 }
 
 .brand-link:active,
 .nav-link:active {
   transform: scale(0.98);
-  transition: color 0.1s ease;
 }
 .brand-link:active .nickname {
   color: var(--colors-accent-dark);
@@ -79,18 +78,10 @@
 
 
 section {
-  padding: 100px 2rem;
-  height: 100vh;
+  padding: 140px 2rem 80px 2rem;
+  min-height: 100vh;
   box-sizing: border-box;
-  scroll-margin-top: 1rem; 
-}
-
-hr {
-  border: none;
-  height: 4px;
-  background-color: var(--colors-divider);
-  width: 50%;
-  margin: 30px auto;
+  scroll-margin-top: 2rem; 
 }
 
 hr.gradient {
@@ -98,29 +89,14 @@ hr.gradient {
   height: 4px;
   width: 80%;
   margin: 24px auto;
-  
   background-color: var(--colors-divider); 
-
-  -webkit-mask-image: linear-gradient(
-    to right, 
-    transparent 0%, 
-    black 25%, 
-    black 75%, 
-    transparent 100%
-  );
-  mask-image: linear-gradient(
-    to right, 
-    transparent 0%, 
-    black 25%, 
-    black 75%, 
-    transparent 100%
-  );
+  mask-image: linear-gradient(to right, transparent 0%, black 25%, black 75%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 25%, black 75%, transparent 100%);
 }
 
 .highlight {
     color: var(--colors-highlight-text);
 }
-
 
 .section-header {
     margin-bottom: 3rem;
@@ -128,7 +104,7 @@ hr.gradient {
 }
 
 .section-header h2 {
-    font-size: 2.5rem;
+    font-size: clamp(2rem, 5vw, 3rem);
     margin-bottom: 0.5rem;
 }
 
@@ -140,6 +116,7 @@ hr.gradient {
 .bento-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-auto-rows: 280px;
     gap: 1.5rem;
     width: 100%;
 }
@@ -152,7 +129,6 @@ hr.gradient {
     border: 1px solid rgba(255, 255, 255, 0.03);
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease, box-shadow 0.4s ease;
 }
 
@@ -167,7 +143,7 @@ hr.gradient {
 .card-media {
     position: relative;
     width: 100%;
-    flex-grow: 1;
+    height: 100%;
     overflow: hidden;
     background-color: #100a1a;
 }
@@ -177,17 +153,35 @@ hr.gradient {
     height: 100%;
     object-fit: cover;
     display: block;
-    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
+}
+
+.item-dual-layer {
+    position: relative;
+}
+.item-dual-layer .wire-view {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: 2;
+}
+.interactive-wire:hover .wire-view,
+.interactive-wire.active-tap .wire-view {
+    opacity: 1;
 }
 
 .card-info {
     padding: 1.5rem;
-    background: linear-gradient(to top, rgba(11, 7, 17, 0.95) 0%, rgba(11, 7, 17, 0) 100%);
+    background: linear-gradient(to top, rgba(11, 7, 17, 0.95) 0%, rgba(11, 7, 17, 0.4) 60%, rgba(11, 7, 17, 0) 100%);
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
     box-sizing: border-box;
+    z-index: 5;
 }
 
 .card-info .category {
@@ -201,34 +195,25 @@ hr.gradient {
 }
 
 .card-info h3 {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     color: var(--colors-main-text);
 }
 
 .bento-item:hover {
     transform: translateY(-5px);
-    border-color: rgba(201, 118, 240, 0.3);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+    border-color: rgba(201, 118, 240, 0.4);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
 }
 
-.bento-item:hover .card-media img {
-    transform: scale(1.03);
+.bento-item:hover .card-media img:not(.wire-view) {
+    transform: scale(1.04);
 }
 
-.interactive-wire .wire-view {
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
-}
-
-.interactive-wire:hover .wire-view {
-    opacity: 1;
-}
 
 @media (max-width: 900px) {
     .bento-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-auto-rows: 240px;
     }
     .bento-item.wide {
         grid-column: span 2;
@@ -238,6 +223,7 @@ hr.gradient {
 @media (max-width: 600px) {
     .bento-grid {
         grid-template-columns: 1fr;
+        grid-auto-rows: 220px;
     }
     .bento-item.wide, .bento-item.tall {
         grid-column: span 1;
