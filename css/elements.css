@@ -2,6 +2,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
   padding: 1rem 5%;
   position: fixed;
   top: 0;
@@ -40,19 +42,22 @@
 
 .nav-list {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   list-style: none;
   margin: 0;
   padding: 0;
-  gap: clamp(1rem, 3vw, 2.5rem);
+  gap: clamp(0.75rem, 2vw, 2.5rem);
 }
 
 .nav-link {
   display: inline-block;
   color: var(--colors-main-text);
   text-decoration: none;
-  font-size: clamp(1rem, 2.5vw, 1.3rem);
+  font-size: clamp(0.85rem, 2vw, 1.3rem);
   font-weight: 500;
   transition: color 0.4s ease, transform 0.3s ease;
+  white-space: nowrap;
 }
 
 .brand-link:active,
@@ -293,6 +298,14 @@ hr.gradient {
         grid-row: span 1;
     }
     section {
-        padding: 6.25rem 1rem 2.5rem 1rem;
+        padding: 8rem 1rem 2.5rem 1rem;
+    }
+    .site-header {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.75rem 1rem;
+    .nav-list {
+        gap: 1rem;
     }
 }
