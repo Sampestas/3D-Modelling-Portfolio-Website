@@ -1,13 +1,13 @@
 :root {
     --colors-main-text: #f8fafc;
     --colors-sub-text: #94a3b8;
-    --colors-highlight-text: #ffe59e;
-    --colors-accent: #c976f0;
+    --colors-accent: rgb(235, 169, 28);/*#c976f0;*/
     --colors-accent-dark: #7f35a1;
     --colors-divider: rgba(201, 118, 240, 0.2);
 
-    --bg-main: #0b0711;
-    --bg-card: #160f22;
-    --bg-card-hover: #1f1530;
+    --bg-main: rgb(11, 7, 17);
+    --bg-card: rgb(22, 15, 34);
+    --bg-card-hover: rgba(201, 118, 240, 0.4);/*#25193a;   rgba(201, 118, 240, 0.4);*/
+    --bg-card-image: rgba(38, 25, 59, 0.6);
     --black-matte: rgba(11, 7, 17, 0.75);
 }
