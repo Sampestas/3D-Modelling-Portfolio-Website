@@ -243,38 +243,136 @@ hr.gradient {
     color: var(--colors-main-text);
 }
 
+
+.site-footer {
+    background-color: var(--bg-card);
+    border-top: 1px solid var(--colors-divider);
+    padding: 2.5rem 2rem;
+    margin-top: 4rem;
+    width: 100%;
+    font-weight: bold;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.alias-footer {
+    color: var(--colors-sub-text);
+    font-size: 0.95rem;
+}
+
+.social-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.social-links a {
+    color: var(--colors-main-text);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: color 0.4s ease, transform 0.3s ease;
+    display: inline-block;
+}
+
+.social-links a:active {
+    color: var(--colors-accent-dark);
+    transform: scale(0.98);
+}
+
+
+
+.about-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+    align-items: start;
+    max-width: 1200px;
+}
+
+.about-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--colors-sub-text);
+}
+
+.about-text p {
+    margin-bottom: 1.5rem;
+}
+
+.about-skills h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    color: var(--colors-main-text);
+}
+
+.skills-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.skills-list li {
+    font-size: 1rem;
+    color: var(--colors-sub-text);
+    padding-left: 1rem;
+    border-left: 2px solid var(--colors-accent);
+}
+
+.skills-list li strong {
+    color: var(--colors-main-text);
+}
+
+
 @media (hover: hover) and (pointer: fine) {
-  .brand-link:hover .nickname,
-  .nav-link:hover {
-    color: var(--colors-accent);
-  }
 
-  .brand-link:hover,
-  .nav-link:hover {
-    transform: scale(1.03);
-  }
+    .brand-link:hover .nickname,
+    .nav-link:hover {
+        color: var(--colors-accent);
+    }
 
-  .bento-item:hover {
-    transform: translateY(-5px);
-    border-color: rgba(201, 118, 240, 0.4);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
-  }
+    .brand-link:hover,
+    .nav-link:hover {
+        transform: scale(1.03);
+    }
 
-  .bento-item:hover .card-media img:not(.wire-view) {
-    transform: scale(1.04);
-  }
+    .bento-item:hover {
+        transform: translateY(-5px);
+        border-color: rgba(201, 118, 240, 0.4);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+    }
 
-  .bento-item.interactive-wire:hover .card-media img:not(.wire-view) {
-    transform: scale(0.99);
-  }
+    .bento-item:hover .card-media img:not(.wire-view) {
+        transform: scale(1.04);
+    }
 
-  .interactive-wire:hover .render-view {
-    opacity: 0;
-  }
+    .bento-item.interactive-wire:hover .card-media img:not(.wire-view) {
+        transform: scale(0.99);
+    }
 
-  .interactive-wire:hover .wire-view {
-    opacity: 1;
-  }
+    .interactive-wire:hover .render-view {
+        opacity: 0;
+    }
+
+    .interactive-wire:hover .wire-view {
+        opacity: 1;
+    }
+
+    .social-links a:hover {
+        color: var(--colors-accent);
+        transform: scale(1.03);
+    }
 }
 
 
@@ -286,6 +384,10 @@ hr.gradient {
     .bento-item.wide {
         grid-column: span 2;
     }
+    .about-layout {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
 }
 
 @media (max-width: 600px) {
@@ -293,20 +395,37 @@ hr.gradient {
         grid-template-columns: 1fr;
         grid-auto-rows: 13.75rem;
     }
-    .bento-item.wide, .bento-item.tall {
+
+    .bento-item.wide,
+    .bento-item.tall {
         grid-column: span 1;
         grid-row: span 1;
     }
+
     section {
         padding: 8rem 1rem 2.5rem 1rem;
     }
+
     .site-header {
         flex-direction: column;
         align-items: center;
         gap: 0.5rem;
         padding: 0.75rem 1rem;
     }
+
     .nav-list {
         gap: 1rem;
+    }
+
+    .footer-container {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 1.25rem;
+    }
+
+    .social-links {
+        width: 100%;
+        justify-content: center;
+        gap: 1.5rem;
     }
 }

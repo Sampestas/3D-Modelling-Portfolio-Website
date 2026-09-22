@@ -42,12 +42,19 @@ The content is organized as follows:
 <directory_structure>
 assets/
   images/
-    website_logo_portfolio.png
+    misc/
+      website_logo_portfolio.png
+    portfolio/
+      realistic_tree_1_wireframe.png
+      realistic_tree_1.png
 css/
   base.css
   elements.css
   main.css
   variables.css
+scripts/
+  bento-grid-manager.js
+  main.js
 index.html
 LICENSE
 </directory_structure>
@@ -60,6 +67,16 @@ This section contains the contents of the repository's files.
 
 @import "base.css";
 @import "elements.css";
+</file>
+
+<file path="scripts/main.js">
+import { init_wireframe_view_for_mobile } from "./bento-grid-manager.js";
+
+function init() {
+    init_wireframe_view_for_mobile();
+}
+
+document.addEventListener("DOMContentLoaded", init);
 </file>
 
 <file path="LICENSE">
@@ -86,253 +103,40 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 </file>
 
-<file path="css/elements.css">
-.site-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-  
-  background-color: var(--black-matte);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  box-shadow: 0 0.25rem 2rem rgba(0, 0, 0, 0.2);
-}
+<file path="scripts/bento-grid-manager.js">
+export function init_wireframe_view_for_mobile() {
+    const cards = document.querySelectorAll(".interactive-wire");
 
-.brand-link {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  text-decoration: none;
-  transition: transform 0.3s ease;
-}
+    cards.forEach((card) => {
+        const showWire = () => card.classList.add("active-tap");
+        const hideWire = () => card.classList.remove("active-tap");
 
-.logo-img {
-  height: 3.5rem;
-  width: auto;
-  object-fit: contain;
-}
+        if (window.PointerEvent) {
+            card.addEventListener("pointerdown", (e) => {
+                if (e.pointerType === "mouse") return;
+                showWire();
+            });
 
-.nickname {
-  display: inline-block;
-  color: var(--colors-main-text);
-  font-size: 2.2rem;
-  font-weight: bold;
-  transition: color 0.4s ease;
-}
+            card.addEventListener("pointerup", (e) => {
+                if (e.pointerType === "mouse") return;
+                hideWire();
+            });
 
-.nav-list {
-  display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  gap: 2.5rem;
-}
+            card.addEventListener("pointercancel", hideWire);
+            card.addEventListener("pointerleave", hideWire);
+        } else {
+            card.addEventListener("touchstart", showWire, { passive: true });
+            card.addEventListener("touchend", hideWire, { passive: true });
+            card.addEventListener("touchcancel", hideWire, { passive: true });
+        }
+    });
 
-.nav-link {
-  display: inline-block;
-  color: var(--colors-main-text);
-  text-decoration: none;
-  font-size: 1.5rem;
-  font-weight: 500;
-  transition: color 0.4s ease, transform 0.3s ease;
-}
-
-.brand-link:hover .nickname,
-.nav-link:hover {
-  color: var(--colors-accent);
-}
-
-.brand-link:hover,
-.nav-link:hover {
-  transform: scale(1.05);
-}
-
-.brand-link:active,
-.nav-link:active {
-  transform: scale(0.98);
-  transition: color 0.1s ease;
-}
-.brand-link:active .nickname {
-  color: var(--colors-accent-dark);
-}
-.nav-link:active {
-  color: var(--colors-accent-dark);
-}
-
-
-section {
-  padding: 100px 2rem;
-  height: 100vh;
-  box-sizing: border-box;
-  scroll-margin-top: 1rem; 
-}
-
-hr {
-  border: none;
-  height: 4px;
-  background-color: var(--colors-divider);
-  width: 50%;
-  margin: 30px auto;
-}
-
-hr.gradient {
-  border: 0;
-  height: 4px;
-  width: 80%;
-  margin: 24px auto;
-  
-  background-color: var(--colors-divider); 
-
-  -webkit-mask-image: linear-gradient(
-    to right, 
-    transparent 0%, 
-    black 25%, 
-    black 75%, 
-    transparent 100%
-  );
-  mask-image: linear-gradient(
-    to right, 
-    transparent 0%, 
-    black 25%, 
-    black 75%, 
-    transparent 100%
-  );
-}
-
-.highlight {
-    color: var(--colors-highlight-text);
-}
-
-
-.section-header {
-    margin-bottom: 3rem;
-    text-align: left;
-}
-
-.section-header h2 {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
-}
-
-.section-header p {
-    color: var(--colors-sub-text);
-    font-size: 1.1rem;
-}
-
-.bento-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 1.5rem;
-    width: 100%;
-}
-
-.bento-item {
-    background-color: var(--bg-card);
-    border-radius: 20px;
-    overflow: hidden;
-    position: relative;
-    border: 1px solid rgba(255, 255, 255, 0.03);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease, box-shadow 0.4s ease;
-}
-
-.bento-item.wide {
-    grid-column: span 2;
-}
-
-.bento-item.tall {
-    grid-row: span 2;
-}
-
-.card-media {
-    position: relative;
-    width: 100%;
-    flex-grow: 1;
-    overflow: hidden;
-    background-color: #100a1a;
-}
-
-.card-media img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.card-info {
-    padding: 1.5rem;
-    background: linear-gradient(to top, rgba(11, 7, 17, 0.95) 0%, rgba(11, 7, 17, 0) 100%);
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-.card-info .category {
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: var(--colors-accent);
-    font-weight: 700;
-    margin-bottom: 0.25rem;
-    display: inline-block;
-}
-
-.card-info h3 {
-    font-size: 1.3rem;
-    color: var(--colors-main-text);
-}
-
-.bento-item:hover {
-    transform: translateY(-5px);
-    border-color: rgba(201, 118, 240, 0.3);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
-}
-
-.bento-item:hover .card-media img {
-    transform: scale(1.03);
-}
-
-.interactive-wire .wire-view {
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
-}
-
-.interactive-wire:hover .wire-view {
-    opacity: 1;
-}
-
-@media (max-width: 900px) {
-    .bento-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-    .bento-item.wide {
-        grid-column: span 2;
-    }
-}
-
-@media (max-width: 600px) {
-    .bento-grid {
-        grid-template-columns: 1fr;
-    }
-    .bento-item.wide, .bento-item.tall {
-        grid-column: span 1;
-        grid-row: span 1;
-    }
-    section {
-        padding: 100px 1rem 40px 1rem;
+    const header = document.querySelector(".site-header");
+    if (header) {
+        window.addEventListener("scroll", () => {
+            header.style.backgroundColor =
+                window.scrollY > 50 ? "rgba(11, 7, 17, 0.95)" : "";
+        });
     }
 }
 </file>
@@ -355,7 +159,7 @@ hr.gradient {
 
 <file path="css/base.css">
 html {
-    font-size: 16px; 
+    font-size: clamp(14px, 0.5vw + 12px, 18px);
     box-sizing: border-box;
     scroll-behavior: smooth;
 }
@@ -390,24 +194,339 @@ section {
 }
 </file>
 
+<file path="css/elements.css">
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  padding: 1rem 5%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-sizing: border-box;
+  
+  background-color: var(--black-matte);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 0.25rem 2rem rgba(0, 0, 0, 0.2);
+}
+
+.brand-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+
+.logo-img {
+  height: clamp(2.5rem, 5vw, 3.5rem);
+  width: auto;
+  object-fit: contain;
+}
+
+.nickname {
+  display: inline-block;
+  color: var(--colors-main-text);
+  font-size: clamp(1.4rem, 4vw, 2.2rem);
+  font-weight: bold;
+  transition: color 0.4s ease;
+}
+
+.nav-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: clamp(0.75rem, 2vw, 2.5rem);
+}
+
+.nav-link {
+  display: inline-block;
+  color: var(--colors-main-text);
+  text-decoration: none;
+  font-size: clamp(0.85rem, 2vw, 1.3rem);
+  font-weight: 500;
+  transition: color 0.4s ease, transform 0.3s ease;
+  white-space: nowrap;
+}
+
+.brand-link:active,
+.nav-link:active {
+  transform: scale(0.98);
+}
+.brand-link:active .nickname {
+  color: var(--colors-accent-dark);
+}
+.nav-link:active {
+  color: var(--colors-accent-dark);
+}
+
+
+section {
+  padding: 8.75rem 2rem 5rem 2rem;
+  min-height: 100vh;
+  box-sizing: border-box;
+  scroll-margin-top: 2rem; 
+}
+
+hr.gradient {
+  border: 0;
+  height: 4px;
+  width: 80%;
+  margin: 24px auto;
+  background-color: var(--colors-divider); 
+  mask-image: linear-gradient(to right, transparent 0%, black 25%, black 75%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 25%, black 75%, transparent 100%);
+}
+
+.highlight {
+    color: var(--colors-highlight-text);
+}
+
+.section-header {
+    margin-bottom: 3rem;
+    text-align: left;
+}
+
+.section-header h2 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    margin-bottom: 0.5rem;
+}
+
+.section-header p {
+    color: var(--colors-sub-text);
+    font-size: 1.1rem;
+}
+
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-auto-rows: 17.5rem;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.bento-item {
+    background-color: var(--bg-card);
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.bento-item.wide {
+    grid-column: span 2;
+}
+
+.bento-item.tall {
+    grid-row: span 2;
+}
+
+.bento-item.interactive-wire .card-media img {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+    object-position: center 20%; 
+    
+    transform: scale(0.97);
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
+    pointer-events: none;
+    -webkit-user-drag: none;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+}
+
+.bento-item.interactive-wire .card-media {
+    background-color: #3b3b3b; /* Вставьте сюда ТОЧНЫЙ цвет фона из Blender (похож на #333333 или #2b2b2b) */
+}
+
+
+.interactive-wire .render-view {
+    opacity: 1;
+    z-index: 1;
+    transition: opacity 0.3s ease;
+}
+
+.interactive-wire .wire-view {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: 2;
+    transition: opacity 0.3s ease;
+}
+
+.interactive-wire.active-tap .render-view {
+    opacity: 0;
+}
+
+.interactive-wire.active-tap .wire-view {
+    opacity: 1;
+}
+
+
+.card-media {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: #100a1a;
+}
+
+.card-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
+}
+
+.item-dual-layer {
+    position: relative;
+}
+.item-dual-layer .wire-view {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: 2;
+}
+.interactive-wire.active-tap .wire-view {
+    opacity: 1;
+}
+
+.card-info {
+    padding: 1.5rem;
+    background: linear-gradient(to top, rgba(11, 7, 17, 0.95) 0%, rgba(11, 7, 17, 0.4) 60%, rgba(11, 7, 17, 0) 100%);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 5;
+}
+
+.card-info .category {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--colors-accent);
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+    display: inline-block;
+}
+
+.card-info h3 {
+    font-size: 1.2rem;
+    color: var(--colors-main-text);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .brand-link:hover .nickname,
+  .nav-link:hover {
+    color: var(--colors-accent);
+  }
+
+  .brand-link:hover,
+  .nav-link:hover {
+    transform: scale(1.03);
+  }
+
+  .bento-item:hover {
+    transform: translateY(-5px);
+    border-color: rgba(201, 118, 240, 0.4);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+  }
+
+  .bento-item:hover .card-media img:not(.wire-view) {
+    transform: scale(1.04);
+  }
+
+  .bento-item.interactive-wire:hover .card-media img:not(.wire-view) {
+    transform: scale(0.99);
+  }
+
+  .interactive-wire:hover .render-view {
+    opacity: 0;
+  }
+
+  .interactive-wire:hover .wire-view {
+    opacity: 1;
+  }
+}
+
+
+@media (max-width: 900px) {
+    .bento-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-auto-rows: 15rem;
+    }
+    .bento-item.wide {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 600px) {
+    .bento-grid {
+        grid-template-columns: 1fr;
+        grid-auto-rows: 13.75rem;
+    }
+    .bento-item.wide, .bento-item.tall {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+    section {
+        padding: 8rem 1rem 2.5rem 1rem;
+    }
+    .site-header {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.75rem 1rem;
+    }
+    .nav-list {
+        gap: 1rem;
+    }
+}
+</file>
+
 <file path="index.html">
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
         <title>Sampestas - 3D-Modeler Portfolio</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" href="data:,">
         <link rel="stylesheet" href="css/main.css">
     </head>
     <body>
         <header class="site-header">
-            <a href="#" class="brand-link" aria-label="Homepage">
-                <img src="assets/images/website_logo_portfolio.png" alt="Logo" class="logo-img">
+            <a href="/" class="brand-link" aria-label="Sampestas Homepage">
+                <img src="assets/images/misc/website_logo_portfolio.png" alt="Sampestas Logo" class="logo-img">
                 <strong class="nickname">Sampestas<span class="highlight">.</span></strong>
             </a>
 
-            <nav class="navigation">
+            <nav class="navigation" id="primary-nav">
                 <ul class="nav-list">
                     <li><a href="#about" class="nav-link">About</a></li>
                     <li><a href="#services" class="nav-link">Services</a></li>
@@ -418,72 +537,80 @@ section {
         </header>
 
         <main>
-            <section id="portfolio">
-                <div class="section-header">
-                    <h2>My Showcase<span class="highlight">.</span></h2>
+            <section id="portfolio" aria-labelledby="portfolio-heading">
+                <header class="section-header">
+                    <h2 id="portfolio-heading">My Showcase<span class="highlight">.</span></h2>
                     <p>A collection of props, environments, and clean topology built natively inside Blender.</p>
-                </div>
+                </header>
 
                 <div class="bento-grid">
-                    <!-- Card 1: Main Feature (Large landscape display) -->
-                    <div class="bento-item wide featured">
+                    
+                    <figure class="bento-item wide featured">
                         <div class="card-media">
-                            <!-- Replace with your actual render path -->
-                            <img src="assets/images/hero_render.jpg" alt="Cyberpunk Street Scene Environment">
+                            <img src="assets/images/hero_render.jpg" alt="High fidelity render of a Cyberpunk Street Scene Environment with neon illumination">
                         </div>
-                        <div class="card-info">
+                        <figcaption class="card-info">
                             <span class="category">Environment Design</span>
                             <h3>Neon Alleyway Project</h3>
-                        </div>
-                    </div>
+                        </figcaption>
+                    </figure>
 
-                    <!-- Card 2: Square Showcase (Topology Switch) -->
-                    <div class="bento-item interactive-wire">
-                        <div class="card-media">
-                            <img src="assets/images/character_render.jpg" alt="Final Model Render" class="render-view">
-                            <img src="assets/images/character_wire.jpg" alt="Wireframe Topology" class="wire-view">
+                    <figure class="bento-item tall interactive-wire">
+                        <div class="card-media item-dual-layer">
+                            <img src="assets/images/portfolio/realistic_tree_1.png" alt="Final textured model render of a realistic tree oak" class="render-view">
+                            <img src="assets/images/portfolio/realistic_tree_1_wireframe.png" alt="Wireframe polygon wire display showcasing the topology of the oak realistic tree" class="wire-view">
                         </div>
-                        <div class="card-info">
-                            <span class="category">Character Model</span>
-                            <h3>Mech Warrior (Hover for Wireframe)</h3>
-                        </div>
-                    </div>
+                        <figcaption class="card-info">
+                            <span class="category">Game asset</span>
+                            <h3>Realistic tree - oak</h3>
+                        </figcaption>
+                    </figure>
 
-                    <!-- Card 3: Vertical Asset Card -->
-                    <div class="bento-item tall">
+                    <!-- Project 3: Vertical Asset Breakdown -->
+                    <figure class="bento-item tall">
                         <div class="card-media">
-                            <img src="assets/images/sword_prop.jpg" alt="High Poly Weapon Render">
+                            <img src="assets/images/sword_prop.jpg" alt="Detailed close-up render of a high poly Crystalline Greatsword weapon asset" loading="lazy">
                         </div>
-                        <div class="card-info">
+                        <figcaption class="card-info">
                             <span class="category">Prop Modeling</span>
                             <h3>Crystalline Greatsword</h3>
-                        </div>
-                    </div>
+                        </figcaption>
+                    </figure>
 
-                    <!-- Card 4: Small Square Detail Spot -->
-                    <div class="bento-item">
+                    <!-- Project 4: Material Shading Node Display -->
+                    <figure class="bento-item">
                         <div class="card-media">
-                            <img src="assets/images/material_sphere.jpg" alt="Procedural Texture Close Up">
+                            <img src="assets/images/material_sphere.jpg" alt="Procedural texture preview sphere displaying custom procedural metal and grime smart materials" loading="lazy">
                         </div>
-                        <div class="card-info">
+                        <figcaption class="card-info">
                             <span class="category">Procedural Shading</span>
                             <h3>Smart Materials</h3>
-                        </div>
-                    </div>
+                        </figcaption>
+                    </figure>
 
-                    <!-- Card 5: Another Wide Project Highlight -->
-                    <div class="bento-item wide">
+                    <!-- Project 5: Vehicle Concept Model -->
+                    <figure class="bento-item wide">
                         <div class="card-media">
-                            <img src="assets/images/vehicle_render.jpg" alt="Hard Surface Vehicle Model">
+                            <img src="assets/images/vehicle_render.jpg" alt="Hard surface render showcasing a complex Sci-Fi Fighter Drone vehicle model" loading="lazy">
                         </div>
-                        <div class="card-info">
+                        <figcaption class="card-info">
                             <span class="category">Hard Surface</span>
                             <h3>Sci-Fi Fighter Drone</h3>
-                        </div>
-                    </div>
+                        </figcaption>
+                    </figure>
                 </div>
             </section>
         </main>
+
+        <footer class="site-footer">
+            <p class="alias-footer">&copy; 2026 Sampestas. All rights reserved.</p>
+            <div class="social-links">
+                <a href="https://artstation.com" target="_blank" rel="noopener noreferrer">ArtStation</a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            </div>
+        </footer>
+        
+        <script type="module" src="scripts/main.js"></script>
     </body>
 </html>
 </file>

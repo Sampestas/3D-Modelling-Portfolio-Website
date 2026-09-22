@@ -9,12 +9,12 @@
     </head>
     <body>
         <header class="site-header">
-            <a href="#" class="brand-link" aria-label="Homepage">
-                <img src="assets/images/misc/website_logo_portfolio.png" alt="Logo" class="logo-img">
+            <a href="#" class="brand-link" aria-label="Sampestas Homepage">
+                <img src="assets/images/misc/website_logo_portfolio.png" alt="Sampestas Logo" class="logo-img">
                 <strong class="nickname">Sampestas<span class="highlight">.</span></strong>
             </a>
 
-            <nav class="navigation">
+            <nav class="navigation" id="primary-nav">
                 <ul class="nav-list">
                     <li><a href="#about" class="nav-link">About</a></li>
                     <li><a href="#services" class="nav-link">Services</a></li>
@@ -25,6 +25,31 @@
         </header>
 
         <main>
+            <section id="about" aria-labelledby="about-heading">
+                <header class="section-header">
+                    <h2 id="about-heading">About Me<span class="highlight">.</span></h2>
+                    <p>My skillset, passions and goals.</p>
+                </header>
+                <div class="about-layout">
+                    <div class="about-text">
+                        <p>I am an indie game developer and 3D artist crafting assets tailored specifically for game engines like Godot and Roblox. </p>
+                        <p>With around 4 months of experience in Blender, I focus on balancing visual detail with optimized performance and taking the smallest details into account. </p>
+                        <p>Instead of chasing overly complex, high-poly renders that tank frame rates, my goal is to build clean, functional props and stylized-realistic nature assets that drop seamlessly into active game scenes. </p>
+                        <p>I build because I love making games, and I am continuously expanding my skillset one asset at a time.</p>
+                    </div>
+            
+                    <div class="about-skills">
+                        <h3>Toolkit<span class="highlight">:</span></h3>
+                        <ul class="skills-list">
+                            <li><strong>3D Modeling:</strong> Blender</li>
+                            <li><strong>Game Engines:</strong> Godot, Roblox Studio</li>
+                            <li><strong>Workflow:</strong> Asset Optimization, Low-Poly Layouts</li>
+                            <li><strong>Texturing:</strong> Adobe Photoshop</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
             <section id="portfolio" aria-labelledby="portfolio-heading">
                 <header class="section-header">
                     <h2 id="portfolio-heading">My Showcase<span class="highlight">.</span></h2>
@@ -33,10 +58,9 @@
 
                 <div class="bento-grid">
                     
-                    <!-- Project 1: Environment Design Feature -->
                     <figure class="bento-item wide featured">
                         <div class="card-media">
-                            <img src="assets/images/hero_render.jpg" alt="High fidelity render of a Cyberpunk Street Scene Environment with neon illumination" loading="lazy">
+                            <img src="assets/images/hero_render.jpg" alt="High fidelity render of a Cyberpunk Street Scene Environment with neon illumination">
                         </div>
                         <figcaption class="card-info">
                             <span class="category">Environment Design</span>
@@ -44,11 +68,10 @@
                         </figcaption>
                     </figure>
 
-                    <!-- Project 2: Character Topology Toggle Display -->
                     <figure class="bento-item tall interactive-wire">
                         <div class="card-media item-dual-layer">
-                            <img src="assets/images/portfolio/realistic_tree_1.png" alt="Final textured model render of Mech Warrior character" class="render-view">
-                            <img src="assets/images/portfolio/realistic_tree_1_wireframe.png" alt="Wireframe polygon wire display showcasing the clean sub-d topology of the Mech Warrior character" class="wire-view">
+                            <img src="assets/images/portfolio/realistic_tree_1.png" alt="Final textured model render of a realistic tree oak" class="render-view">
+                            <img src="assets/images/portfolio/realistic_tree_1_wireframe.png" alt="Wireframe polygon wire display showcasing the topology of the oak realistic tree" class="wire-view">
                         </div>
                         <figcaption class="card-info">
                             <span class="category">Game asset</span>
@@ -91,7 +114,17 @@
                 </div>
             </section>
         </main>
-        
+
+        <footer class="site-footer">
+            <div class="footer-container">
+                <p class="alias-footer">&copy; 2026 Sampestas. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="https://artstation.com" target="_blank" rel="noopener noreferrer">ArtStation</a>
+                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                </div>
+            </div>
+        </footer>
+
         <script type="module" src="scripts/main.js"></script>
     </body>
 </html>
