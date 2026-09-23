@@ -2,55 +2,61 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Sampestas - 3D-Modeler Portfolio</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Sampestas | 3D-Modeler Portfolio</title>
+        <meta name="description" content="Portfolio of Sampestas, an indie game developer and 3D artist creating optimized Blender assets for Godot, Roblox, and game-ready scenes.">
+        <meta name="theme-color" content="#0b0711">
 
         <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon/favicon-16x16.png">
         <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon/apple-touch-icon.png">
         <link rel="manifest" href="assets/images/favicon/site.webmanifest">
 
-
         <link rel="stylesheet" href="css/main.css">
     </head>
-    <body>
+    <body id="top">
         <header class="site-header">
-            <a href="#" class="brand-link" aria-label="Sampestas Homepage">
-                <img src="assets/images/misc/website_logo_portfolio.png" alt="Sampestas Logo" class="logo-img">
-                <strong class="nickname">Sampestas<span class="highlight">.</span></strong>
+            <a href="#top" class="brand-link" aria-label="Back to top">
+                <img src="assets/images/misc/website_logo_portfolio.png" alt="" class="logo-img" aria-hidden="true">
+                <h1 class="nickname">Sampestas<span class="highlight">.</span></h1>
             </a>
 
-            <nav class="navigation" id="primary-nav">
-                <ul class="nav-list">
-                    <li><a href="#about" class="nav-link">About</a></li>
-                    <li><a href="#services" class="nav-link">Services</a></li>
-                    <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
-                    <li><a href="#contact" class="nav-link">Contact</a></li>
-                </ul>
-            </nav>
+            <div class="header-controls">
+                <nav class="navigation" id="primary-nav" aria-label="Primary">
+                    <ul class="nav-list">
+                        <li><a href="#about" class="nav-link" data-i18n="nav-about">About</a></li>
+                        <li><a href="#services" class="nav-link" data-i18n="nav-services">Services</a></li>
+                        <li><a href="#portfolio" class="nav-link" data-i18n="nav-portfolio">Portfolio</a></li>
+                        <li><a href="#contact" class="nav-link" data-i18n="nav-contact">Contact</a></li>
+                    </ul>
+                </nav>
+            
+                <button id="lang-switcher-btn" class="lang-btn" aria-label="Switch to Russian">RU</button>
+            </div>
         </header>
 
-        <main>
+        <main id="main-content">
             <section id="about" aria-labelledby="about-heading">
                 <header class="section-header">
-                    <h2 id="about-heading">About Me<span class="highlight">.</span></h2>
-                    <p>My skillset, passions and goals.</p>
+                    <h2 id="about-heading"><span data-i18n="about-heading">About Me</span><span class="highlight">.</span></h2>
+                    <p data-i18n="about-sub">My skillset, passions and goals.</p>
                 </header>
+
                 <div class="about-layout">
                     <div class="about-text">
-                        <p>I am an indie game developer and 3D artist crafting assets tailored specifically for game engines like Godot and Roblox. </p>
-                        <p>With around 4 months of experience in Blender, I focus on balancing visual detail with optimized performance and taking the smallest details into account. </p>
-                        <p>Instead of chasing overly complex, high-poly renders that tank frame rates, my goal is to build clean, functional props and stylized-realistic nature assets that drop seamlessly into active game scenes. </p>
-                        <p>I build because I love making games, and I am continuously expanding my skillset one asset at a time.</p>
+                        <p data-i18n="about-text-1">I am an <mark class="orange">indie game developer</mark> and 3D artist crafting assets tailored specifically for game engines like Godot and Roblox.</p>
+                        <p data-i18n="about-text-2">With around 4 months of experience in Blender, I focus on balancing visual detail with optimized performance and taking the smallest details into account.</p>
+                        <p data-i18n="about-text-3">Instead of chasing overly complex, high-poly renders that tank frame rates, my goal is to build clean, functional props and stylized-realistic nature assets that drop seamlessly into active game scenes.</p>
+                        <p data-i18n="about-text-4">I build because I love making games, and I am continuously expanding my skillset one asset at a time.</p>
                     </div>
-            
+
                     <div class="about-skills">
-                        <h3>Toolkit<span class="highlight">:</span></h3>
+                        <h3><span data-i18n="toolkit-heading">Toolkit</span><span class="highlight">:</span></h3>
                         <ul class="skills-list">
-                            <li><strong>3D Modeling:</strong> Blender</li>
-                            <li><strong>Game Engines:</strong> Godot, Roblox Studio</li>
-                            <li><strong>Workflow:</strong> Asset Optimization, Low-Poly Layouts</li>
-                            <li><strong>Texturing:</strong> Adobe Photoshop</li>
+                            <li><strong data-i18n="toolkit-1">3D Modeling:</strong> Blender</li>
+                            <li><strong data-i18n="toolkit-2">Game Engines:</strong> Godot, Roblox Studio</li>
+                            <li><strong data-i18n="toolkit-3">Texturing:</strong> Adobe Photoshop</li>
                         </ul>
                     </div>
                 </div>
@@ -60,42 +66,39 @@
 
             <section id="services" aria-labelledby="services-heading">
                 <header class="section-header">
-                    <h2 id="services-heading">Production Pipeline<span class="highlight">.</span></h2>
-                    <p>My <mark class="purple">pipeline</mark> of how I create projects</p>
+                    <h2 id="services-heading"><span data-i18n="pipeline-heading">Production Pipeline</span><span class="highlight">.</span></h2>
+                    <p><span data-i18n="pipeline-sub-1">My </span><mark class="purple" data-i18n="pipeline-sub-2">workflow</mark><span data-i18n="pipeline-sub-3"> of how I create various projects from scratch</span></p>
                 </header>
 
                 <div class="pipeline-container">
-                    <nav class="pipeline-bar">
-                        <div class="pipeline-step step-1 active" data-step="1">
-                            <span class="step-num">1.</span>
+                    <div class="pipeline-bar" role="tablist" aria-label="Production pipeline stages" aria-orientation="vertical">
+                        <div class="pipeline-step step-1 active" data-step="1" role="tab" id="pipeline-tab-1" aria-controls="pipeline-panel" aria-selected="true" tabindex="0">
+                            <span class="step-num" aria-hidden="true">1.</span>
                             <div class="step-content">
-                                <h3>Idea & Reference</h3>
-                                <p>Analyzing concepts, proportions, and visual direction before starting.</p>
+                                <h3 data-i18n="step-1-title">Idea &amp; Reference</h3>
+                                <p data-i18n="step-1-desc">Analyzing concepts, proportions, and visual direction before starting.</p>
                             </div>
                         </div>
-                        <div class="pipeline-step step-2" data-step="2">
-                            <span class="step-num">2.</span>
+                        <div class="pipeline-step step-2" data-step="2" role="tab" id="pipeline-tab-2" aria-controls="pipeline-panel" aria-selected="false" tabindex="-1">
+                            <span class="step-num" aria-hidden="true">2.</span>
                             <div class="step-content">
-                                <h3>Blender Modeling</h3>
-                                <p>Crafting clean geometry, matching forms, and optimizing polycount.</p>
+                                <h3 data-i18n="step-2-title">Blender Modeling</h3>
+                                <p data-i18n="step-2-desc">Crafting clean geometry, matching forms, and optimizing polycount.</p>
                             </div>
                         </div>
-                        <div class="pipeline-step step-3" data-step="3">
-                            <span class="step-num">3.</span>
+                        <div class="pipeline-step step-3" data-step="3" role="tab" id="pipeline-tab-3" aria-controls="pipeline-panel" aria-selected="false" tabindex="-1">
+                            <span class="step-num" aria-hidden="true">3.</span>
                             <div class="step-content">
-                                <h3>Texturing Block</h3>
-                                <p>Unwrapping UVs and hand-painting or baking high-quality textures.</p>
+                                <h3 data-i18n="step-3-title">Texturing Stage</h3>
+                                <p data-i18n="step-3-desc">Unwrapping UVs and hand-painting or baking high-quality textures.</p>
                             </div>
                         </div>
-                    </nav>
+                    </div>
 
-                    <div class="pipeline-viewport">
-                        <img src="assets/images/services-section/realistic_tree_reference.jpg" alt="Reference Stage"
-                            class="pipeline-img img-1">
-                        <img src="assets/images/portfolio/realistic_tree_1_wireframe.png" alt="Blender Viewport Stage"
-                            class="pipeline-img img-2">
-                        <img src="assets/images/portfolio/realistic_tree_1.png" alt="Texturing Stage"
-                            class="pipeline-img img-3">
+                    <div class="pipeline-viewport" id="pipeline-panel" role="tabpanel" aria-labelledby="pipeline-tab-1" tabindex="0">
+                        <img src="assets/images/services-section/realistic_tree_reference.jpg" alt="Reference image of a realistic tree used for modeling" class="pipeline-img img-1" decoding="async">
+                        <img src="assets/images/portfolio/realistic_tree_1_wireframe.png" alt="Blender viewport showing the wireframe topology of the tree model" class="pipeline-img img-2" loading="lazy" decoding="async">
+                        <img src="assets/images/portfolio/realistic_tree_1.png" alt="Textured final render of the realistic tree model" class="pipeline-img img-3" loading="lazy" decoding="async">
                     </div>
                 </div>
             </section>
@@ -104,73 +107,72 @@
 
             <section id="portfolio" aria-labelledby="portfolio-heading">
                 <header class="section-header">
-                    <h2 id="portfolio-heading">My Showcase<span class="highlight">.</span></h2>
-                    <p>A collection of my projects I made in <mark class="orange">Blender</mark>.</p>
+                    <h2 id="portfolio-heading"><span data-i18n="portfolio-heading">My Showcase</span><span class="highlight">.</span></h2>
+                    <p><span data-i18n="portfolio-sub-1">A collection of my projects I made in </span><mark class="orange" data-i18n="portfolio-sub-2">Blender</mark>.</p>
                 </header>
 
                 <div class="bento-grid">
-                    
                     <figure class="bento-item wide featured">
                         <div class="card-media">
-                            <img src="assets/images/hero_render.jpg" alt="Textured final render of a green grassy field with distant mountains and clouds">
+                            <img src="assets/images/hero_render.jpg" alt="Textured final render of a green grassy field with distant mountains and clouds" decoding="async">
                         </div>
                         <figcaption class="card-info">
-                            <span class="category">Environment Design</span>
-                            <h3>Grassy field rendered scene</h3>
+                            <span class="category" data-i18n="portfolio-cat-env">Environment Design</span>
+                            <h3 data-i18n="portfolio-title-env">Grassy field rendered scene</h3>
                         </figcaption>
                     </figure>
 
                     <figure class="bento-item tall interactive-wire">
                         <div class="card-media item-dual-layer">
-                            <img src="assets/images/portfolio/realistic_tree_1.png" alt="Final textured model render of a realistic tree oak" class="render-view">
-                            <img src="assets/images/portfolio/realistic_tree_1_wireframe.png" alt="Wireframe polygon wire display showcasing the topology of the oak realistic tree" class="wire-view">
+                            <img src="assets/images/portfolio/realistic_tree_1.png" alt="Final textured model render of a realistic oak tree" class="render-view" loading="lazy" decoding="async">
+                            <img src="assets/images/portfolio/realistic_tree_1_wireframe.png" alt="" aria-hidden="true" class="wire-view" loading="lazy" decoding="async">
                         </div>
                         <figcaption class="card-info">
-                            <span class="category">Game asset</span>
-                            <h3>Realistic tree - oak</h3>
+                            <span class="category" data-i18n="category-game-asset">Game asset</span>
+                            <h3 data-i18n="portfolio-title-tree">Realistic tree - oak</h3>
                         </figcaption>
                     </figure>
 
                     <figure class="bento-item tall">
                         <div class="card-media">
-                            <img src="assets/images/sword_prop.jpg" alt="A close-up render of a crystalline greatsword" loading="lazy">
+                            <img src="assets/images/sword_prop.jpg" alt="A close-up render of a crystalline greatsword" loading="lazy" decoding="async">
                         </div>
                         <figcaption class="card-info">
-                            <span class="category">Prop Modeling</span>
-                            <h3>Crystalline Greatsword</h3>
+                            <span class="category" data-i18n="category-game-asset">Prop Modeling</span>
+                            <h3 data-i18n="portfolio-title-sword">Crystalline Greatsword</h3>
                         </figcaption>
                     </figure>
 
                     <figure class="bento-item">
                         <div class="card-media">
-                            <img src="assets/images/material_sphere.jpg" alt="A close-up render of a yellow duck with hand-painted textures" loading="lazy">
+                            <img src="assets/images/material_sphere.jpg" alt="A close-up render of a yellow duck with hand-painted textures" loading="lazy" decoding="async">
                         </div>
                         <figcaption class="card-info">
-                            <span class="category">Texture Painting</span>
-                            <h3>A funny little duck</h3>
+                            <span class="category" data-i18n="category-texture-painting">Texture Painting</span>
+                            <h3 data-i18n="portfolio-title-duck">A rubber duck</h3>
                         </figcaption>
                     </figure>
 
                     <figure class="bento-item wide">
                         <div class="card-media">
-                            <img src="assets/images/vehicle_render.jpg" alt="A render of a mustang modern car" loading="lazy">
+                            <img src="assets/images/vehicle_render.jpg" alt="A render of a modern Mustang car" loading="lazy" decoding="async">
                         </div>
                         <figcaption class="card-info">
-                            <span class="category">Hard Surface</span>
-                            <h3>Mustang car</h3>
+                            <span class="category" data-i18n="category-tech">Hard Surface</span>
+                            <h3 data-i18n="portfolio-title-mustang">Mustang car</h3>
                         </figcaption>
                     </figure>
                 </div>
             </section>
         </main>
 
-        <footer class="site-footer">
+        <footer class="site-footer" id="contact" aria-label="Contact and social links">
             <div class="footer-container">
-                <p class="alias-footer">&copy; 2026 Sampestas. All rights reserved.</p>
-                <div class="social-links">
+                <p class="alias-footer" data-i18n="footer-copy">&copy; 2026 Sampestas. All rights reserved.</p>
+                <nav class="social-links" aria-label="Social media">
                     <a href="https://artstation.com" target="_blank" rel="noopener noreferrer">ArtStation</a>
                     <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                </div>
+                </nav>
             </div>
         </footer>
 

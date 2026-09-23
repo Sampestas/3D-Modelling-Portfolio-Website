@@ -1,0 +1,43 @@
+.about-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+    align-items: start;
+    max-width: 1200px;
+}
+
+.about-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--colors-sub-text);
+}
+
+.about-text p {
+    margin-bottom: 1.5rem;
+}
+
+.about-skills h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    color: var(--colors-main-text);
+}
+
+.skills-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.skills-list li {
+    font-size: 1rem;
+    color: var(--colors-sub-text);
+    padding-left: 1rem;
+    border-left: 2px solid var(--colors-accent);
+}
+
+.skills-list li strong {
+    color: var(--colors-main-text);
+}

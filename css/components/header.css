@@ -1,0 +1,102 @@
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem;
+    padding: 1rem 10%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-sizing: border-box;
+    background-color: var(--black-matte);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 0.25rem 2rem rgba(0, 0, 0, 0.2);
+}
+
+.brand-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.logo-img {
+    height: clamp(2.5rem, 5vw, 3.5rem);
+    width: auto;
+    object-fit: contain;
+}
+
+.nickname {
+    display: inline-block;
+    color: var(--colors-main-text);
+    font-size: clamp(1.4rem, 4vw, 2.2rem);
+    font-weight: bold;
+    transition: color 0.4s ease;
+}
+
+.nav-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: clamp(0.75rem, 2vw, 2.5rem);
+}
+
+.nav-link {
+    display: inline-block;
+    color: var(--colors-main-text);
+    text-decoration: none;
+    font-size: clamp(0.85rem, 2vw, 1.3rem);
+    font-weight: 500;
+    transition: color 0.4s ease, transform 0.3s ease;
+    white-space: nowrap;
+}
+
+.brand-link:active,
+.nav-link:active {
+    transform: scale(0.98);
+}
+
+.brand-link:active .nickname {
+    color: var(--colors-accent-dark);
+}
+
+.nav-link:active {
+    color: var(--colors-accent-dark);
+}
+
+
+.header-controls {
+    display: flex;
+    align-items: center;
+    gap: clamp(1rem, 3vw, 3rem);
+}
+
+.lang-btn {
+    background: transparent;
+    border: 1px solid var(--colors-divider);
+    color: var(--colors-main-text);
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.lang-btn:hover {
+    border-color: var(--colors-accent);
+    color: var(--colors-accent);
+    transform: scale(1.05);
+}
+
+.lang-btn:active {
+    transform: scale(0.98);
+}

@@ -1,4 +1,11 @@
 @import "variables.css";
-
 @import "base.css";
-@import "elements.css";
+
+@import "components/header.css";
+@import "components/shared-ui.css";
+@import "components/about.css";
+@import "components/pipeline.css";
+@import "components/portfolio.css";
+@import "components/footer.css";
+
+@import "responsive.css";

@@ -1,8 +1,8 @@
 :root {
-    --colors-main-text: #f8fafc;
-    --colors-sub-text: #94a3b8;
+    --colors-main-text: rgb(248, 250, 252);
+    --colors-sub-text: rgb(148, 163, 184);
     --colors-accent: rgb(235, 169, 28);
-    --colors-accent-dark: #7f35a1;
+    --colors-accent-dark: rgb(127, 53, 161);
     --colors-accent-orange-dark: rgb(224, 131, 24);
     --colors-divider: rgba(201, 118, 240, 0.2);
 
@@ -10,5 +10,6 @@
     --bg-card: rgb(22, 15, 34);
     --bg-card-hover: rgba(201, 118, 240, 0.4);
     --bg-card-image: rgba(38, 25, 59, 0.6);
+    --bg-card-render: rgb(58, 58, 58);
     --black-matte: rgba(11, 7, 17, 0.75);
 }

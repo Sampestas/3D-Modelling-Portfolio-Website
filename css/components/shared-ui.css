@@ -1,0 +1,53 @@
+
+section {
+    padding: 8.75rem 2rem 5rem 2rem;
+    min-height: 100vh;
+    box-sizing: border-box;
+    scroll-margin-top: 2rem;
+}
+
+hr.gradient {
+    border: 0;
+    height: 4px;
+    width: 80%;
+    margin: 0.5rem auto;
+    background-color: var(--colors-divider);
+    mask-image: linear-gradient(to right, transparent 0%, black 25%, black 75%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 25%, black 75%, transparent 100%);
+}
+
+mark {
+    color: var(--colors-main-text);
+    padding: 0.2rem 0.4rem;
+    border-radius: 6px;
+    font-weight: bold;
+    display: inline-block;
+    line-height: 1;
+}
+
+mark.purple {
+    background-color: var(--colors-accent-dark);
+}
+
+mark.orange {
+    background-color: var(--colors-accent-orange-dark);
+}
+
+.highlight {
+    color: var(--colors-accent);
+}
+
+.section-header {
+    margin-bottom: 3rem;
+    text-align: left;
+}
+
+.section-header h2 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    margin-bottom: 0.5rem;
+}
+
+.section-header p {
+    color: var(--colors-sub-text);
+    font-size: 1.1rem;
+}
