@@ -30,17 +30,17 @@ export class LanguageManager {
                 "portfolio-heading": "My Showcase",
                 "portfolio-sub-1": "A collection of my projects I made in ",
                 "portfolio-sub-2": "Blender",
-                "portfolio-cat-env": "Environment Design",
                 "portfolio-title-env": "Grassy field rendered scene",
-                "portfolio-cat-tree": "Game asset",
                 "portfolio-title-tree": "Realistic tree - oak",
-                "portfolio-cat-sword": "Prop Modeling",
                 "portfolio-title-sword": "Crystalline Greatsword",
-                "portfolio-cat-duck": "Texture Painting",
                 "portfolio-title-duck": "A funny little duck",
-                "portfolio-cat-mustang": "Hard Surface",
                 "portfolio-title-mustang": "Mustang car",
-                "footer-copy": "© 2026 Sampestas. All rights reserved."
+                "footer-copy": "© 2026 Sampestas. All rights reserved.",
+
+                "category-game-asset": "Game asset",
+                "category-texture-painting": "Texture painting",
+                "category-tech": "Tech modeling",
+                "category-env": "Environment design"
             },
             ru: {
                 "nav-about": "О себе",
@@ -70,7 +70,6 @@ export class LanguageManager {
                 "portfolio-heading": "Мои работы",
                 "portfolio-sub-1": "Коллекция проектов, сделанных мною в ",
                 "portfolio-sub-2": "Blender",
-                "portfolio-cat-env": "Дизайн окружения",
                 "portfolio-title-env": "Отрендеренная сцена пейзажа с травянистыми полями",
                 "portfolio-title-tree": "Реалистичное дерево — дуб",
                 "portfolio-title-sword": "Кристальный двуручный меч",
@@ -80,7 +79,8 @@ export class LanguageManager {
 
                 "category-game-asset": "Игровой ассет",
                 "category-texture-painting": "Рисование текстур",
-                "category-tech": "Моделирование техники"
+                "category-tech": "Моделирование техники",
+                "category-env": "Дизайн окружения"
             }
         };
     }
