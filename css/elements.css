@@ -4,7 +4,7 @@
   align-items: center;
   flex-wrap: wrap;
   gap: 0.5rem 1rem;
-  padding: 1rem 5%;
+  padding: 1rem 10%;
   position: fixed;
   top: 0;
   left: 0;
@@ -90,7 +90,6 @@ hr.gradient {
 }
 
 mark {
-    background-color: var(--colors-accent-dark);
     color: var(--colors-main-text);
     padding: 0.2rem 0.4rem;
     border-radius: 6px;
@@ -98,6 +97,15 @@ mark {
     display: inline-block;
     line-height: 1;
 }
+
+mark.purple {
+    background-color: var(--colors-accent-dark);
+}
+
+mark.orange {
+    background-color: var(--colors-accent-orange-dark);
+}
+
 .highlight {
     color: var(--colors-accent);
 }
@@ -238,7 +246,7 @@ mark {
 }
 
 .card-info .category {
-    font-family: cursive, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 0.8rem;
     text-transform: uppercase;
     letter-spacing: 0.05em;
@@ -298,8 +306,6 @@ mark {
     transform: scale(0.98);
 }
 
-
-
 .about-layout {
     display: grid;
     grid-template-columns: 2fr 1fr;
@@ -343,8 +349,6 @@ mark {
 .skills-list li strong {
     color: var(--colors-main-text);
 }
-
-
 
 .services-grid {
     display: grid;
