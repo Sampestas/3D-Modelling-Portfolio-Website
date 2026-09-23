@@ -42,6 +42,11 @@ The content is organized as follows:
 <directory_structure>
 assets/
   images/
+    favicon/
+      apple-touch-icon.png
+      favicon-16x16.png
+      favicon-32x32.png
+      site.webmanifest
     misc/
       website_logo_portfolio.png
     portfolio/
@@ -61,6 +66,10 @@ LICENSE
 
 <files>
 This section contains the contents of the repository's files.
+
+<file path="assets/images/favicon/site.webmanifest">
+{"name":"","short_name":"","icons":[{"src":"/android-chrome-192x192.png","sizes":"192x192","type":"image/png"},{"src":"/android-chrome-512x512.png","sizes":"512x512","type":"image/png"}],"theme_color":"#ffffff","background_color":"#ffffff","display":"standalone"}
+</file>
 
 <file path="css/main.css">
 @import "variables.css";
@@ -145,14 +154,14 @@ export function init_wireframe_view_for_mobile() {
 :root {
     --colors-main-text: #f8fafc;
     --colors-sub-text: #94a3b8;
-    --colors-highlight-text: #ffe59e;
-    --colors-accent: #c976f0;
+    --colors-accent: rgb(235, 169, 28);/*#c976f0;*/
     --colors-accent-dark: #7f35a1;
     --colors-divider: rgba(201, 118, 240, 0.2);
 
-    --bg-main: #0b0711;
-    --bg-card: #160f22;
-    --bg-card-hover: #1f1530;
+    --bg-main: rgb(11, 7, 17);
+    --bg-card: rgb(22, 15, 34);
+    --bg-card-hover: rgba(201, 118, 240, 0.4);/*#25193a;   rgba(201, 118, 240, 0.4);*/
+    --bg-card-image: rgba(38, 25, 59, 0.6);
     --black-matte: rgba(11, 7, 17, 0.75);
 }
 </file>
@@ -280,14 +289,23 @@ hr.gradient {
   border: 0;
   height: 4px;
   width: 80%;
-  margin: 24px auto;
+  margin: 0.5rem auto;
   background-color: var(--colors-divider); 
   mask-image: linear-gradient(to right, transparent 0%, black 25%, black 75%, transparent 100%);
   -webkit-mask-image: linear-gradient(to right, transparent 0%, black 25%, black 75%, transparent 100%);
 }
 
+mark {
+    background-color: var(--colors-accent-dark);
+    color: var(--colors-main-text);
+    padding: 0.2rem 0.4rem;
+    border-radius: 6px;
+    font-weight: bold;  
+    display: inline-block;
+    line-height: 1;
+}
 .highlight {
-    color: var(--colors-highlight-text);
+    color: var(--colors-accent);
 }
 
 .section-header {
@@ -315,10 +333,10 @@ hr.gradient {
 
 .bento-item {
     background-color: var(--bg-card);
-    border-radius: 20px;
+    border-radius: 15px;
     overflow: hidden;
     position: relative;
-    border: 1px solid rgba(255, 255, 255, 0.03);
+    border: 2px solid rgba(255, 255, 255, 0.03);
     display: flex;
     flex-direction: column;
     transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease, box-shadow 0.4s ease;
@@ -352,7 +370,7 @@ hr.gradient {
 }
 
 .bento-item.interactive-wire .card-media {
-    background-color: #3b3b3b; /* Вставьте сюда ТОЧНЫЙ цвет фона из Blender (похож на #333333 или #2b2b2b) */
+    background-color: #3b3b3b;
 }
 
 
@@ -387,7 +405,7 @@ hr.gradient {
     width: 100%;
     height: 100%;
     overflow: hidden;
-    background-color: #100a1a;
+    background-color: var(--bg-card-image);
 }
 
 .card-media img {
@@ -426,6 +444,7 @@ hr.gradient {
 }
 
 .card-info .category {
+    font-family: cursive, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 0.8rem;
     text-transform: uppercase;
     letter-spacing: 0.05em;
@@ -440,38 +459,190 @@ hr.gradient {
     color: var(--colors-main-text);
 }
 
+
+.site-footer {
+    background-color: var(--bg-card);
+    border-top: 1px solid var(--colors-divider);
+    padding: 2.5rem 2rem;
+    margin-top: 4rem;
+    width: 100%;
+    font-weight: bold;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.alias-footer {
+    color: var(--colors-sub-text);
+    font-size: 0.95rem;
+}
+
+.social-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.social-links a {
+    color: var(--colors-main-text);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: color 0.4s ease, transform 0.3s ease;
+    display: inline-block;
+}
+
+.social-links a:active {
+    color: var(--colors-accent-dark);
+    transform: scale(0.98);
+}
+
+
+
+.about-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+    align-items: start;
+    max-width: 1200px;
+}
+
+.about-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--colors-sub-text);
+}
+
+.about-text p {
+    margin-bottom: 1.5rem;
+}
+
+.about-skills h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    color: var(--colors-main-text);
+}
+
+.skills-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.skills-list li {
+    font-size: 1rem;
+    color: var(--colors-sub-text);
+    padding-left: 1rem;
+    border-left: 2px solid var(--colors-accent);
+}
+
+.skills-list li strong {
+    color: var(--colors-main-text);
+}
+
+
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.service-card {
+    background-color: var(--bg-card);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    border-radius: 20px;
+    padding: 2.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+#service-card-1 {
+    height: 20rem;
+}
+
+#service-card-2 {
+    height: 25rem;
+}
+
+#service-card-3 {
+    height: 30rem;
+}
+
+.service-icon-wrapper {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.service-card h3 {
+    font-size: 1.4rem;
+    color: var(--colors-main-text);
+}
+
+.service-card p {
+    color: var(--colors-sub-text);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+
 @media (hover: hover) and (pointer: fine) {
-  .brand-link:hover .nickname,
-  .nav-link:hover {
-    color: var(--colors-accent);
-  }
 
-  .brand-link:hover,
-  .nav-link:hover {
-    transform: scale(1.03);
-  }
+    .brand-link:hover .nickname,
+    .nav-link:hover {
+        color: var(--colors-accent);
+    }
 
-  .bento-item:hover {
-    transform: translateY(-5px);
-    border-color: rgba(201, 118, 240, 0.4);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
-  }
+    .brand-link:hover,
+    .nav-link:hover {
+        transform: scale(1.03);
+    }
 
-  .bento-item:hover .card-media img:not(.wire-view) {
-    transform: scale(1.04);
-  }
+    .bento-item:hover {
+        transform: translateY(-5px);
+        border-color: var(--bg-card-hover);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+    }
 
-  .bento-item.interactive-wire:hover .card-media img:not(.wire-view) {
-    transform: scale(0.99);
-  }
+    .bento-item:hover .card-media img:not(.wire-view) {
+        transform: scale(1.04);
+    }
 
-  .interactive-wire:hover .render-view {
-    opacity: 0;
-  }
+    .bento-item.interactive-wire:hover .card-media img:not(.wire-view) {
+        transform: scale(0.99);
+    }
 
-  .interactive-wire:hover .wire-view {
-    opacity: 1;
-  }
+    .interactive-wire:hover .render-view {
+        opacity: 0;
+    }
+
+    .interactive-wire:hover .wire-view {
+        opacity: 1;
+    }
+
+    .social-links a:hover {
+        color: var(--colors-accent);
+        transform: scale(1.03);
+    }
+
+    .service-card:hover {
+        transform: translateY(-5px);
+        border-color: var(--bg-card-hover);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+    }
 }
 
 
@@ -483,6 +654,13 @@ hr.gradient {
     .bento-item.wide {
         grid-column: span 2;
     }
+    .about-layout {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    .services-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
 }
 
 @media (max-width: 600px) {
@@ -490,21 +668,47 @@ hr.gradient {
         grid-template-columns: 1fr;
         grid-auto-rows: 13.75rem;
     }
-    .bento-item.wide, .bento-item.tall {
+
+    .bento-item.wide,
+    .bento-item.tall {
         grid-column: span 1;
         grid-row: span 1;
     }
+
     section {
         padding: 8rem 1rem 2.5rem 1rem;
     }
+
     .site-header {
         flex-direction: column;
         align-items: center;
         gap: 0.5rem;
         padding: 0.75rem 1rem;
     }
+
     .nav-list {
         gap: 1rem;
+    }
+
+    .footer-container {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 1.25rem;
+    }
+
+    .social-links {
+        width: 100%;
+        justify-content: center;
+        gap: 1.5rem;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+    
+    .service-card {
+        padding: 2rem 1.5rem;
     }
 }
 </file>
@@ -521,7 +725,7 @@ hr.gradient {
     </head>
     <body>
         <header class="site-header">
-            <a href="/" class="brand-link" aria-label="Sampestas Homepage">
+            <a href="#" class="brand-link" aria-label="Sampestas Homepage">
                 <img src="assets/images/misc/website_logo_portfolio.png" alt="Sampestas Logo" class="logo-img">
                 <strong class="nickname">Sampestas<span class="highlight">.</span></strong>
             </a>
@@ -537,21 +741,78 @@ hr.gradient {
         </header>
 
         <main>
+            <section id="about" aria-labelledby="about-heading">
+                <header class="section-header">
+                    <h2 id="about-heading">About Me<span class="highlight">.</span></h2>
+                    <p>My skillset, passions and goals.</p>
+                </header>
+                <div class="about-layout">
+                    <div class="about-text">
+                        <p>I am an indie game developer and 3D artist crafting assets tailored specifically for game engines like Godot and Roblox. </p>
+                        <p>With around 4 months of experience in Blender, I focus on balancing visual detail with optimized performance and taking the smallest details into account. </p>
+                        <p>Instead of chasing overly complex, high-poly renders that tank frame rates, my goal is to build clean, functional props and stylized-realistic nature assets that drop seamlessly into active game scenes. </p>
+                        <p>I build because I love making games, and I am continuously expanding my skillset one asset at a time.</p>
+                    </div>
+            
+                    <div class="about-skills">
+                        <h3>Toolkit<span class="highlight">:</span></h3>
+                        <ul class="skills-list">
+                            <li><strong>3D Modeling:</strong> Blender</li>
+                            <li><strong>Game Engines:</strong> Godot, Roblox Studio</li>
+                            <li><strong>Workflow:</strong> Asset Optimization, Low-Poly Layouts</li>
+                            <li><strong>Texturing:</strong> Adobe Photoshop</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <hr class="gradient">
+
+            <section id="services" aria-labelledby="services-heading">
+                <header class="section-header">
+                    <h2 id="services-heading">Services Offered<span class="highlight">.</span></h2>
+                    <p>How I can help create your next  <mark>magnum opus</mark></p>
+                </header>
+            
+                <div class="services-grid">
+                    <article class="service-card" id="service-card-1">
+                        <div class="service-icon-wrapper">📦</div>
+                        <h3>Game-Ready Assets</h3>
+                        <p> I can create various props, environment elements and stylized or realistic nature assets from scratch</p>
+                    </article>
+            
+                    <article class="service-card" id="service-card-2">
+                        <div class="service-icon-wrapper">⚡</div>
+                        <h3>Optimization</h3>
+                        <p>Retopology and asset clean-up to ensure that the asset doesn't have excessive geometry that might lead to more lag</p>
+                    </article>
+            
+                    <article class="service-card" id="service-card-3">
+                        <div class="service-icon-wrapper">🎮</div>
+                        <h3>Scene Assembly</h3>
+                        <p>Setting up clean pivot points, proper bounding boxes, and optimized UV maps so assets drop instantly into
+                            scenes without scale or orientation issues.</p>
+                    </article>
+                </div>
+            </section>
+            
+            <hr class="gradient">
+
             <section id="portfolio" aria-labelledby="portfolio-heading">
                 <header class="section-header">
                     <h2 id="portfolio-heading">My Showcase<span class="highlight">.</span></h2>
-                    <p>A collection of props, environments, and clean topology built natively inside Blender.</p>
+                    <p>A collection of my projects I made in Blender.</p>
                 </header>
 
                 <div class="bento-grid">
                     
                     <figure class="bento-item wide featured">
                         <div class="card-media">
-                            <img src="assets/images/hero_render.jpg" alt="High fidelity render of a Cyberpunk Street Scene Environment with neon illumination">
+                            <img src="assets/images/hero_render.jpg" alt="Textured final render of a green grassy field with distant mountains and clouds">
                         </div>
                         <figcaption class="card-info">
                             <span class="category">Environment Design</span>
-                            <h3>Neon Alleyway Project</h3>
+                            <h3>Grassy field rendered scene</h3>
                         </figcaption>
                     </figure>
 
@@ -566,10 +827,9 @@ hr.gradient {
                         </figcaption>
                     </figure>
 
-                    <!-- Project 3: Vertical Asset Breakdown -->
                     <figure class="bento-item tall">
                         <div class="card-media">
-                            <img src="assets/images/sword_prop.jpg" alt="Detailed close-up render of a high poly Crystalline Greatsword weapon asset" loading="lazy">
+                            <img src="assets/images/sword_prop.jpg" alt="A close-up render of a crystalline greatsword" loading="lazy">
                         </div>
                         <figcaption class="card-info">
                             <span class="category">Prop Modeling</span>
@@ -577,25 +837,23 @@ hr.gradient {
                         </figcaption>
                     </figure>
 
-                    <!-- Project 4: Material Shading Node Display -->
                     <figure class="bento-item">
                         <div class="card-media">
-                            <img src="assets/images/material_sphere.jpg" alt="Procedural texture preview sphere displaying custom procedural metal and grime smart materials" loading="lazy">
+                            <img src="assets/images/material_sphere.jpg" alt="A close-up render of a yellow duck with hand-painted textures" loading="lazy">
                         </div>
                         <figcaption class="card-info">
-                            <span class="category">Procedural Shading</span>
-                            <h3>Smart Materials</h3>
+                            <span class="category">Texture Painting</span>
+                            <h3>A funny little duck</h3>
                         </figcaption>
                     </figure>
 
-                    <!-- Project 5: Vehicle Concept Model -->
                     <figure class="bento-item wide">
                         <div class="card-media">
-                            <img src="assets/images/vehicle_render.jpg" alt="Hard surface render showcasing a complex Sci-Fi Fighter Drone vehicle model" loading="lazy">
+                            <img src="assets/images/vehicle_render.jpg" alt="A render of a mustang modern car" loading="lazy">
                         </div>
                         <figcaption class="card-info">
                             <span class="category">Hard Surface</span>
-                            <h3>Sci-Fi Fighter Drone</h3>
+                            <h3>Mustang car</h3>
                         </figcaption>
                     </figure>
                 </div>
@@ -603,13 +861,15 @@ hr.gradient {
         </main>
 
         <footer class="site-footer">
-            <p class="alias-footer">&copy; 2026 Sampestas. All rights reserved.</p>
-            <div class="social-links">
-                <a href="https://artstation.com" target="_blank" rel="noopener noreferrer">ArtStation</a>
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <div class="footer-container">
+                <p class="alias-footer">&copy; 2026 Sampestas. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="https://artstation.com" target="_blank" rel="noopener noreferrer">ArtStation</a>
+                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                </div>
             </div>
         </footer>
-        
+
         <script type="module" src="scripts/main.js"></script>
     </body>
 </html>
