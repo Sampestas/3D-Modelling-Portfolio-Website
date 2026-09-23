@@ -60,32 +60,46 @@
 
             <section id="services" aria-labelledby="services-heading">
                 <header class="section-header">
-                    <h2 id="services-heading">Services Offered<span class="highlight">.</span></h2>
-                    <p>How I can help create your next  <mark class="purple">magnum opus</mark></p>
+                    <h2 id="services-heading">Production Pipeline<span class="highlight">.</span></h2>
+                    <p>My <mark class="purple">pipeline</mark> of how I create projects</p>
                 </header>
-            
-                <div class="services-grid">
-                    <article class="service-card" id="service-card-1">
-                        <div class="service-icon-wrapper">📦</div>
-                        <h3>Game-Ready Assets</h3>
-                        <p> I can create various props, environment elements and stylized or realistic nature assets from scratch</p>
-                    </article>
-            
-                    <article class="service-card" id="service-card-2">
-                        <div class="service-icon-wrapper">⚡</div>
-                        <h3>Optimization</h3>
-                        <p>Retopology and asset clean-up to ensure that the asset doesn't have excessive geometry that might lead to more lag</p>
-                    </article>
-            
-                    <article class="service-card" id="service-card-3">
-                        <div class="service-icon-wrapper">🎮</div>
-                        <h3>Scene Assembly</h3>
-                        <p>Setting up clean pivot points, proper bounding boxes, and optimized UV maps so assets drop instantly into
-                            scenes without scale or orientation issues.</p>
-                    </article>
+
+                <div class="pipeline-container">
+                    <nav class="pipeline-bar">
+                        <div class="pipeline-step step-1 active" data-step="1">
+                            <span class="step-num">1.</span>
+                            <div class="step-content">
+                                <h3>Idea & Reference</h3>
+                                <p>Analyzing concepts, proportions, and visual direction before starting.</p>
+                            </div>
+                        </div>
+                        <div class="pipeline-step step-2" data-step="2">
+                            <span class="step-num">2.</span>
+                            <div class="step-content">
+                                <h3>Blender Modeling</h3>
+                                <p>Crafting clean geometry, matching forms, and optimizing polycount.</p>
+                            </div>
+                        </div>
+                        <div class="pipeline-step step-3" data-step="3">
+                            <span class="step-num">3.</span>
+                            <div class="step-content">
+                                <h3>Texturing Block</h3>
+                                <p>Unwrapping UVs and hand-painting or baking high-quality textures.</p>
+                            </div>
+                        </div>
+                    </nav>
+
+                    <div class="pipeline-viewport">
+                        <img src="assets/images/services-section/realistic_tree_reference.jpg" alt="Reference Stage"
+                            class="pipeline-img img-1">
+                        <img src="assets/images/portfolio/realistic_tree_1_wireframe.png" alt="Blender Viewport Stage"
+                            class="pipeline-img img-2">
+                        <img src="assets/images/portfolio/realistic_tree_1.png" alt="Texturing Stage"
+                            class="pipeline-img img-3">
+                    </div>
                 </div>
             </section>
-            
+
             <hr class="gradient">
 
             <section id="portfolio" aria-labelledby="portfolio-heading">

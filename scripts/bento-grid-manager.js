@@ -10,12 +10,10 @@ export function init_wireframe_view_for_mobile() {
                 if (e.pointerType === "mouse") return;
                 showWire();
             });
-
             card.addEventListener("pointerup", (e) => {
                 if (e.pointerType === "mouse") return;
                 hideWire();
             });
-
             card.addEventListener("pointercancel", hideWire);
             card.addEventListener("pointerleave", hideWire);
         } else {
