@@ -25,7 +25,12 @@
     grid-row: span 2;
 }
 
-.bento-item.interactive-wire .card-media img {
+.bento-item.large {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.bento-item.interactive-hover .card-media img {
     object-fit: contain;
     width: 100%;
     height: 100%;
@@ -42,17 +47,17 @@
     -webkit-touch-callout: none;
 }
 
-.bento-item.interactive-wire .card-media {
+.bento-item.interactive-hover .card-media {
     background-color: var(--bg-card-render);
 }
 
-.interactive-wire .render-view {
+.interactive-hover .view-default {
     opacity: 1;
     z-index: 1;
     transition: opacity 0.3s ease;
 }
 
-.interactive-wire .wire-view {
+.interactive-hover .view-hover {
     position: absolute;
     top: 0;
     left: 0;
@@ -63,11 +68,11 @@
     transition: opacity 0.3s ease;
 }
 
-.interactive-wire.active-tap .render-view {
+.interactive-hover.active-tap .view-default {
     opacity: 0;
 }
 
-.interactive-wire.active-tap .wire-view {
+.interactive-hover.active-tap .view-hover {
     opacity: 1;
 }
 

@@ -1,0 +1,1161 @@
+This file is a merged representation of the entire codebase, combined into a single document by Repomix.
+
+<file_summary>
+This section contains a summary of this file.
+
+<purpose>
+This file contains a packed representation of the entire repository's contents.
+It is designed to be easily consumable by AI systems for analysis, code review,
+or other automated processes.
+</purpose>
+
+<file_format>
+The content is organized as follows:
+1. This summary section
+2. Repository information
+3. Directory structure
+4. Repository files (if enabled)
+5. Multiple file entries, each consisting of:
+  - File path as an attribute
+  - Full contents of the file
+</file_format>
+
+<usage_guidelines>
+- This file should be treated as read-only. Any changes should be made to the
+  original repository files, not this packed version.
+- When processing this file, use the file path to distinguish
+  between different files in the repository.
+- Be aware that this file may contain sensitive information. Handle it with
+  the same level of security as you would the original repository.
+</usage_guidelines>
+
+<notes>
+- Some files may have been excluded based on .gitignore rules and Repomix's configuration
+- Binary files are not included in this packed representation. Please refer to the Repository Structure section for a complete list of file paths, including binary files
+- Files matching patterns in .gitignore are excluded
+- Files matching default ignore patterns are excluded
+- Files are sorted by Git change count (files with more changes are at the bottom)
+</notes>
+
+</file_summary>
+
+<directory_structure>
+assets/
+  images/
+    favicon/
+      android-chrome-192x192.png
+      android-chrome-512x512.png
+      apple-touch-icon.png
+      favicon-16x16.png
+      favicon-32x32.png
+      favicon.ico
+      site.webmanifest
+    misc/
+      website_logo_portfolio.png
+    portfolio/
+      realistic_tree_1_wireframe.png
+      realistic_tree_1.png
+    services-section/
+      realistic_tree_reference.jpg
+css/
+  components/
+    about.css
+    footer.css
+    header.css
+    pipeline.css
+    portfolio.css
+    shared-ui.css
+  base.css
+  main.css
+  responsive.css
+  variables.css
+scripts/
+  bento-grid-manager.js
+  language-manager.js
+  main.js
+  services_section.js
+index.html
+</directory_structure>
+
+<files>
+This section contains the contents of the repository's files.
+
+<file path="assets/images/favicon/site.webmanifest">
+{
+    "name": "",
+    "short_name": "",
+    "icons": [
+        {
+            "src": "/assets/images/favicon/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/images/favicon/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#ffffff",
+    "background_color": "#ffffff",
+    "display": "standalone"
+}
+</file>
+
+<file path="css/components/about.css">
+.about-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+    align-items: start;
+    max-width: 1200px;
+}
+
+.about-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--colors-sub-text);
+}
+
+.about-text p {
+    margin-bottom: 1.5rem;
+}
+
+.about-skills h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    color: var(--colors-main-text);
+}
+
+.skills-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.skills-list li {
+    font-size: 1rem;
+    color: var(--colors-sub-text);
+    padding-left: 1rem;
+    border-left: 2px solid var(--colors-accent);
+}
+
+.skills-list li strong {
+    color: var(--colors-main-text);
+}
+</file>
+
+<file path="css/components/footer.css">
+.site-footer {
+    background-color: var(--bg-card);
+    border-top: 1px solid var(--colors-divider);
+    padding: 2.5rem 2rem;
+    margin-top: 4rem;
+    width: 100%;
+    font-weight: bold;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.alias-footer {
+    color: var(--colors-sub-text);
+    font-size: 0.95rem;
+}
+
+.social-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.social-links a {
+    color: var(--colors-main-text);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: color 0.4s ease, transform 0.3s ease;
+    display: inline-block;
+}
+
+.social-links a:active {
+    color: var(--colors-accent-dark);
+    transform: scale(0.98);
+}
+</file>
+
+<file path="css/components/header.css">
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem;
+    padding: 1rem 10%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-sizing: border-box;
+    background-color: var(--black-matte);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 0.25rem 2rem rgba(0, 0, 0, 0.2);
+}
+
+.brand-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.logo-img {
+    height: clamp(2.5rem, 5vw, 3.5rem);
+    width: auto;
+    object-fit: contain;
+}
+
+.nickname {
+    display: inline-block;
+    color: var(--colors-main-text);
+    font-size: clamp(1.4rem, 4vw, 2.2rem);
+    font-weight: bold;
+    transition: color 0.4s ease;
+}
+
+.nav-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: clamp(0.75rem, 2vw, 2.5rem);
+}
+
+.nav-link {
+    display: inline-block;
+    color: var(--colors-main-text);
+    text-decoration: none;
+    font-size: clamp(0.85rem, 2vw, 1.3rem);
+    font-weight: 500;
+    transition: color 0.4s ease, transform 0.3s ease;
+    white-space: nowrap;
+}
+
+.brand-link:active,
+.nav-link:active {
+    transform: scale(0.98);
+}
+
+.brand-link:active .nickname {
+    color: var(--colors-accent-dark);
+}
+
+.nav-link:active {
+    color: var(--colors-accent-dark);
+}
+
+
+.header-controls {
+    display: flex;
+    align-items: center;
+    gap: clamp(1rem, 3vw, 3rem);
+}
+
+.lang-btn {
+    background: transparent;
+    border: 1px solid var(--colors-divider);
+    color: var(--colors-main-text);
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.lang-btn:hover {
+    border-color: var(--colors-accent);
+    color: var(--colors-accent);
+    transform: scale(1.05);
+}
+
+.lang-btn:active {
+    transform: scale(0.98);
+}
+</file>
+
+<file path="css/components/pipeline.css">
+.pipeline-container {
+    display: flex;
+    gap: 2.5rem;
+    width: 100%;
+    align-items: stretch;
+}
+
+.pipeline-bar {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    flex: 1;
+}
+
+.pipeline-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.25rem;
+    padding: 2rem 1rem;
+    background-color: var(--bg-card);
+    border: 2px solid rgba(255, 255, 255, 0.03);
+    border-radius: 15px;
+    cursor: pointer;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.pipeline-step.active {
+    border-color: var(--colors-accent-dark);
+    background-color: rgba(201, 118, 240, 0.05);
+}
+
+.step-num {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--colors-accent);
+    line-height: 1.2;
+}
+
+.step-content h3 {
+    font-size: 1.25rem;
+    color: var(--colors-main-text);
+    margin-bottom: 0.25rem;
+}
+
+.step-content p {
+    color: var(--colors-sub-text);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.pipeline-viewport {
+    position: relative;
+    flex: 1.5;
+    background-color: var(--bg-card-render);
+    border: 2px solid rgba(255, 255, 255, 0.03);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.pipeline-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    opacity: 0;
+    z-index: 2;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.pipeline-container:not([data-active-stage]) .img-1,
+.pipeline-container[data-active-stage="1"] .img-1,
+.pipeline-container[data-active-stage="2"] .img-2,
+.pipeline-container[data-active-stage="3"] .img-3,
+.pipeline-container[data-active-stage="4"] .img-4 {
+    opacity: 1;
+    z-index: 3;
+}
+</file>
+
+<file path="css/components/portfolio.css">
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-auto-rows: 17.5rem;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.bento-item {
+    background-color: var(--bg-card);
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+    border: 2px solid rgba(255, 255, 255, 0.03);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.bento-item.wide {
+    grid-column: span 2;
+}
+
+.bento-item.tall {
+    grid-row: span 2;
+}
+
+.bento-item.interactive-wire .card-media img {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-position: center 20%;
+    transform: scale(0.97);
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
+    pointer-events: none;
+    -webkit-user-drag: none;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+}
+
+.bento-item.interactive-wire .card-media {
+    background-color: var(--bg-card-render);
+}
+
+.interactive-wire .render-view {
+    opacity: 1;
+    z-index: 1;
+    transition: opacity 0.3s ease;
+}
+
+.interactive-wire .wire-view {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: 2;
+    transition: opacity 0.3s ease;
+}
+
+.interactive-wire.active-tap .render-view {
+    opacity: 0;
+}
+
+.interactive-wire.active-tap .wire-view {
+    opacity: 1;
+}
+
+.card-media {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: var(--bg-card-image);
+}
+
+.card-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
+}
+
+.item-dual-layer {
+    position: relative;
+}
+
+.item-dual-layer .wire-view {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: 2;
+}
+
+.card-info {
+    padding: 1.5rem;
+    background: linear-gradient(to top, rgba(11, 7, 17, 0.95) 0%, rgba(11, 7, 17, 0.4) 60%, rgba(11, 7, 17, 0) 100%);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 5;
+}
+
+.card-info .category {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--colors-accent);
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+    display: inline-block;
+}
+
+.card-info h3 {
+    font-size: 1.2rem;
+    color: var(--colors-main-text);
+}
+</file>
+
+<file path="css/components/shared-ui.css">
+section {
+    padding: 8.75rem 2rem 5rem 2rem;
+    min-height: 100vh;
+    box-sizing: border-box;
+    scroll-margin-top: 2rem;
+}
+
+hr.gradient {
+    border: 0;
+    height: 4px;
+    width: 80%;
+    margin: 0.5rem auto;
+    background-color: var(--colors-divider);
+    mask-image: linear-gradient(to right, transparent 0%, black 25%, black 75%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 25%, black 75%, transparent 100%);
+}
+
+mark {
+    color: var(--colors-main-text);
+    padding: 0.2rem 0.4rem;
+    border-radius: 6px;
+    font-weight: bold;
+    display: inline-block;
+    line-height: 1;
+}
+
+mark.purple {
+    background-color: var(--colors-accent-dark);
+}
+
+mark.orange {
+    background-color: var(--colors-accent-orange-dark);
+}
+
+.highlight {
+    color: var(--colors-accent);
+}
+
+.section-header {
+    margin-bottom: 3rem;
+    text-align: left;
+}
+
+.section-header h2 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    margin-bottom: 0.5rem;
+}
+
+.section-header p {
+    color: var(--colors-sub-text);
+    font-size: 1.1rem;
+}
+</file>
+
+<file path="css/responsive.css">
+@media (hover: hover) and (pointer: fine) {
+
+    .brand-link:hover .nickname,
+    .nav-link:hover {
+        color: var(--colors-accent);
+    }
+
+    .brand-link:hover,
+    .nav-link:hover {
+        transform: scale(1.03);
+    }
+
+    .bento-item:hover {
+        transform: translateY(-5px);
+        border-color: var(--bg-card-hover);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .bento-item:hover .card-media img:not(.wire-view) {
+        transform: scale(1.04);
+    }
+
+    .bento-item.interactive-wire:hover .card-media img:not(.wire-view) {
+        transform: scale(0.99);
+    }
+
+    .interactive-wire:hover .render-view {
+        opacity: 0;
+    }
+
+    .interactive-wire:hover .wire-view {
+        opacity: 1;
+    }
+
+    .social-links a:hover {
+        color: var(--colors-accent);
+        transform: scale(1.03);
+    }
+
+    .service-card:hover {
+        transform: translateY(-5px);
+        border-color: var(--bg-card-hover);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .pipeline-step:hover {
+        transform: translateX(8px);
+        border-color: var(--bg-card-hover);
+    }
+}
+
+@media (max-width: 900px) {
+    .bento-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-auto-rows: 15rem;
+    }
+
+    .bento-item.wide {
+        grid-column: span 2;
+    }
+
+    .about-layout {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .services-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .pipeline-container {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1.5rem;
+    }
+
+    .pipeline-viewport {
+        order: 1;
+        aspect-ratio: 16 / 10;
+    }
+
+    .pipeline-bar {
+        order: 2;
+    }
+}
+
+@media (max-width: 600px) {
+    .bento-grid {
+        grid-template-columns: 1fr;
+        grid-auto-rows: 13.75rem;
+    }
+
+    .bento-item.wide,
+    .bento-item.tall {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+
+    section {
+        padding: 8rem 1rem 2.5rem 1rem;
+    }
+
+    .site-header {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.75rem 1rem;
+    }
+
+    .nav-list {
+        gap: 1rem;
+    }
+
+    .footer-container {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 1.25rem;
+    }
+
+    .social-links {
+        width: 100%;
+        justify-content: center;
+        gap: 1.5rem;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+
+    .service-card {
+        padding: 2rem 1.5rem;
+    }
+
+    .header-controls {
+        flex-direction: column;
+        gap: 0.75rem;
+        width: 100%;
+        align-items: center;
+    }
+}
+</file>
+
+<file path="scripts/services_section.js">
+export function init_pipeline_manager() {
+    const steps = document.querySelectorAll(".pipeline-step");
+    const container = document.querySelector(".pipeline-container");
+
+    if (!steps.length || !container) return;
+
+    steps.forEach((step) => {
+        const setStepActive = () => {
+            steps.forEach(s => s.classList.remove("active"));
+            step.classList.add("active");
+            container.setAttribute("data-active-stage", step.getAttribute("data-step"));
+        };
+
+        step.addEventListener("mouseenter", setStepActive);
+        step.addEventListener("click", setStepActive);
+    });
+}
+</file>
+
+<file path="css/main.css">
+@import "variables.css";
+@import "base.css";
+
+@import "components/header.css";
+@import "components/shared-ui.css";
+@import "components/about.css";
+@import "components/pipeline.css";
+@import "components/portfolio.css";
+@import "components/footer.css";
+
+@import "responsive.css";
+</file>
+
+<file path="scripts/language-manager.js">
+export class LanguageManager {
+    constructor() {
+        this.currentLang = localStorage.getItem('portfolio_lang') || 'en';
+        this.dictionary = {
+            en: {
+                "nav-about": "About",
+                "nav-services": "Services",
+                "nav-portfolio": "Portfolio",
+                "nav-contact": "Contact",
+                "about-heading": "About Me",
+                "about-sub": "My skillset, passions and goals.",
+                "about-text-1": "I am an indie game developer and 3D artist making various models primarily in the game-dev field.",
+                "about-text-2": "With around 4 months of experience in Blender, I focus on balancing visual detail with optimized performance and taking the smallest details into account.",
+                "about-text-3": "Instead of chasing overly complex, high-poly renders that tank frame rates, my goal is to build clean, functional props and stylized-realistic nature assets that drop seamlessly into active game scenes.",
+                "about-text-4": "I build because I love making games, and I am continuously expanding my skillset one asset at a time.",
+                "toolkit-heading": "Toolkit",
+                "toolkit-1": "3D Modeling:",
+                "toolkit-2": "Game engines:",
+                "toolkit-3": "Texturing:",
+                "pipeline-heading": "Production Pipeline",
+                "pipeline-sub-1": "My ",
+                "pipeline-sub-2": "workflow",
+                "pipeline-sub-3": " of how I create various projects from scratch",
+                "step-1-title": "Idea & Reference",
+                "step-1-desc": "Analyzing concepts, proportions, and visual direction before starting.",
+                "step-2-title": "Blender Modeling",
+                "step-2-desc": "Crafting clean geometry, matching forms, and optimizing polycount.",
+                "step-3-title": "Texturing Stage",
+                "step-3-desc": "Unwrapping UVs and hand-painting or baking high-quality textures.",
+                "portfolio-heading": "My Showcase",
+                "portfolio-sub-1": "A collection of my projects I made in ",
+                "portfolio-sub-2": "Blender",
+                "portfolio-title-env": "Grassy field rendered scene",
+                "portfolio-title-tree": "Realistic tree - oak",
+                "portfolio-title-sword": "Crystalline Greatsword",
+                "portfolio-title-duck": "A funny little duck",
+                "portfolio-title-mustang": "Mustang car",
+                "footer-copy": "© 2026 Sampestas. All rights reserved.",
+
+                "category-game-asset": "Game asset",
+                "category-texture-painting": "Texture painting",
+                "category-tech": "Tech modeling",
+                "category-env": "Environment design"
+            },
+            ru: {
+                "nav-about": "О себе",
+                "nav-services": "Услуги",
+                "nav-portfolio": "Портфолио",
+                "nav-contact": "Контакты",
+                "about-heading": "Обо мне",
+                "about-sub": "Мои навыки, увлечения и цели.",
+                "about-text-1": "Я инди-разработчик игр и 3D-художник, создающий различные модели в основном в области разработки игр.",
+                "about-text-2": "Имея около 4 месяцев опыта работы в Blender, я уделяю внимание оптимизации моделей, чтобы избежать лишней геометрии.",
+                "about-text-3": "Вместо создания слишком сложных высокополигональных рендеров, которые просаживают фреймрейт, моя цель - создавать красивые стилизованно-реалистичные элементы окружения, которые в то же время производительные и легко интегрируются в игровые сцены.",
+                "about-text-4": "Я занимаюсь созданием 3д моделей, потому что люблю создавать игры и часто делаю ассеты для своих проектов, и улучшаю свои навыки - проект за проектом.",
+                "toolkit-heading": "Инструменты",
+                "toolkit-1": "3д моделирование:",
+                "toolkit-2": "Игровые движки:",
+                "toolkit-3": "Текстурирование:",
+                "pipeline-heading": "Процесс разработки",
+                "pipeline-sub-1": "Мой ",
+                "pipeline-sub-2": "рабочий процесс",
+                "pipeline-sub-3": " создания различных проектов с нуля",
+                "step-1-title": "Идея и референсы",
+                "step-1-desc": "Анализ концептов, пропорций и визуального направления перед началом работы.",
+                "step-2-title": "Моделирование в Blender",
+                "step-2-desc": "Создание чистой геометрии, соблюдение форм и оптимизация полигонажа.",
+                "step-3-title": "Этап текстурирования",
+                "step-3-desc": "Развертка UV-карт, ручная покраска или запекание высококачественных текстур.",
+                "portfolio-heading": "Мои работы",
+                "portfolio-sub-1": "Коллекция проектов, сделанных мною в ",
+                "portfolio-sub-2": "Blender",
+                "portfolio-title-env": "Отрендеренная сцена пейзажа с травянистыми полями",
+                "portfolio-title-tree": "Реалистичное дерево — дуб",
+                "portfolio-title-sword": "Кристальный двуручный меч",
+                "portfolio-title-duck": "Резиновая утка",
+                "portfolio-title-mustang": "Автомобиль Mustang",
+                "footer-copy": "© 2026 Sampestas. Все права защищены.",
+
+                "category-game-asset": "Игровой ассет",
+                "category-texture-painting": "Рисование текстур",
+                "category-tech": "Моделирование техники",
+                "category-env": "Дизайн окружения"
+            }
+        };
+    }
+
+    init() {
+        this.btn = document.getElementById('lang-switcher-btn');
+        if (!this.btn) return;
+        this.btn.addEventListener('click', () => this.toggleLanguage());
+        this.applyLanguage(this.currentLang);
+    }
+
+    toggleLanguage() {
+        const nextLang = this.currentLang === 'en' ? 'ru' : 'en';
+        this.applyLanguage(nextLang);
+    }
+
+    applyLanguage(lang) {
+        const elements = document.querySelectorAll('[data-i18n]');
+        elements.forEach(el => {
+            const key = el.getAttribute('data-i18n');
+            if (this.dictionary[lang] && this.dictionary[lang][key]) {
+                el.textContent = this.dictionary[lang][key];
+            }
+        });
+
+        document.documentElement.lang = lang;
+
+        this.btn.textContent = lang === 'en' ? 'RU' : 'EN';
+        this.btn.setAttribute('aria-label', lang === 'en' ? 'Switch to Russian' : 'Переключить на английский');
+
+        localStorage.setItem('portfolio_lang', lang);
+        this.currentLang = lang;
+    }
+}
+</file>
+
+<file path="scripts/bento-grid-manager.js">
+export function init_wireframe_view_for_mobile() {
+    const cards = document.querySelectorAll(".interactive-wire");
+
+    cards.forEach((card) => {
+        const showWire = () => card.classList.add("active-tap");
+        const hideWire = () => card.classList.remove("active-tap");
+
+        if (window.PointerEvent) {
+            card.addEventListener("pointerdown", (e) => {
+                if (e.pointerType === "mouse") return;
+                showWire();
+            });
+            card.addEventListener("pointerup", (e) => {
+                if (e.pointerType === "mouse") return;
+                hideWire();
+            });
+            card.addEventListener("pointercancel", hideWire);
+            card.addEventListener("pointerleave", hideWire);
+        } else {
+            card.addEventListener("touchstart", showWire, { passive: true });
+            card.addEventListener("touchend", hideWire, { passive: true });
+            card.addEventListener("touchcancel", hideWire, { passive: true });
+        }
+    });
+
+    const header = document.querySelector(".site-header");
+    if (header) {
+        window.addEventListener("scroll", () => {
+            header.style.backgroundColor =
+                window.scrollY > 50 ? "rgba(11, 7, 17, 0.95)" : "";
+        });
+    }
+}
+</file>
+
+<file path="scripts/main.js">
+import { init_wireframe_view_for_mobile } from "./bento-grid-manager.js";
+import { init_pipeline_manager } from "./services_section.js";
+import { LanguageManager } from "./language-manager.js";
+
+function init() {
+    const langManager = new LanguageManager();
+    langManager.init();
+
+    init_wireframe_view_for_mobile();
+    init_pipeline_manager();
+}
+
+document.addEventListener("DOMContentLoaded", init);
+</file>
+
+<file path="css/base.css">
+html {
+    font-size: clamp(14px, 0.5vw + 12px, 18px);
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--colors-main-text);
+    margin: 0;
+    min-height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    touch-action: manipulation; 
+}
+
+section {
+    padding: 120px 2rem 60px 2rem;
+    min-height: 100vh;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+</file>
+
+<file path="css/variables.css">
+:root {
+    --colors-main-text: rgb(248, 250, 252);
+    --colors-sub-text: rgb(148, 163, 184);
+    --colors-accent: rgb(235, 169, 28);
+    --colors-accent-dark: rgb(127, 53, 161);
+    --colors-accent-orange-dark: rgb(224, 131, 24);
+    --colors-divider: rgba(201, 118, 240, 0.2);
+
+    --bg-main: rgb(11, 7, 17);
+    --bg-card: rgb(22, 15, 34);
+    --bg-card-hover: rgba(201, 118, 240, 0.4);
+    --bg-card-image: rgba(38, 25, 59, 0.6);
+    --bg-card-render: rgb(58, 58, 58);
+    --black-matte: rgba(11, 7, 17, 0.75);
+}
+</file>
+
+<file path="index.html">
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Sampestas | 3D-Modeler Portfolio</title>
+        <meta name="description" content="Portfolio of Sampestas, an indie game developer and 3D artist creating optimized Blender assets for Godot, Roblox, and game-ready scenes.">
+        <meta name="theme-color" content="#0b0711">
+
+        <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon/favicon-16x16.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon/apple-touch-icon.png">
+        <link rel="manifest" href="assets/images/favicon/site.webmanifest">
+
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+    <body id="top">
+        <header class="site-header">
+            <a href="#top" class="brand-link" aria-label="Back to top">
+                <img src="assets/images/misc/website_logo_portfolio.png" alt="" class="logo-img" aria-hidden="true">
+                <h1 class="nickname">Sampestas<span class="highlight">.</span></h1>
+            </a>
+
+            <div class="header-controls">
+                <nav class="navigation" id="primary-nav" aria-label="Primary">
+                    <ul class="nav-list">
+                        <li><a href="#about" class="nav-link" data-i18n="nav-about">About</a></li>
+                        <li><a href="#services" class="nav-link" data-i18n="nav-services">Services</a></li>
+                        <li><a href="#portfolio" class="nav-link" data-i18n="nav-portfolio">Portfolio</a></li>
+                        <li><a href="#contact" class="nav-link" data-i18n="nav-contact">Contact</a></li>
+                    </ul>
+                </nav>
+            
+                <button id="lang-switcher-btn" class="lang-btn" aria-label="Switch to Russian">RU</button>
+            </div>
+        </header>
+
+        <main id="main-content">
+            <section id="about" aria-labelledby="about-heading">
+                <header class="section-header">
+                    <h2 id="about-heading"><span data-i18n="about-heading">About Me</span><span class="highlight">.</span></h2>
+                    <p data-i18n="about-sub">My skillset, passions and goals.</p>
+                </header>
+
+                <div class="about-layout">
+                    <div class="about-text">
+                        <p data-i18n="about-text-1">I am an <mark class="orange">indie game developer</mark> and 3D artist crafting assets tailored specifically for game engines like Godot and Roblox.</p>
+                        <p data-i18n="about-text-2">With around 4 months of experience in Blender, I focus on balancing visual detail with optimized performance and taking the smallest details into account.</p>
+                        <p data-i18n="about-text-3">Instead of chasing overly complex, high-poly renders that tank frame rates, my goal is to build clean, functional props and stylized-realistic nature assets that drop seamlessly into active game scenes.</p>
+                        <p data-i18n="about-text-4">I build because I love making games, and I am continuously expanding my skillset one asset at a time.</p>
+                    </div>
+
+                    <div class="about-skills">
+                        <h3><span data-i18n="toolkit-heading">Toolkit</span><span class="highlight">:</span></h3>
+                        <ul class="skills-list">
+                            <li><strong data-i18n="toolkit-1">3D Modeling:</strong> Blender</li>
+                            <li><strong data-i18n="toolkit-2">Game Engines:</strong> Godot, Roblox Studio</li>
+                            <li><strong data-i18n="toolkit-3">Texturing:</strong> Adobe Photoshop</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <hr class="gradient">
+
+            <section id="services" aria-labelledby="services-heading">
+                <header class="section-header">
+                    <h2 id="services-heading"><span data-i18n="pipeline-heading">Production Pipeline</span><span class="highlight">.</span></h2>
+                    <p><span data-i18n="pipeline-sub-1">My </span><mark class="purple" data-i18n="pipeline-sub-2">workflow</mark><span data-i18n="pipeline-sub-3"> of how I create various projects from scratch</span></p>
+                </header>
+
+                <div class="pipeline-container">
+                    <div class="pipeline-bar" role="tablist" aria-label="Production pipeline stages" aria-orientation="vertical">
+                        <div class="pipeline-step step-1 active" data-step="1" role="tab" id="pipeline-tab-1" aria-controls="pipeline-panel" aria-selected="true" tabindex="0">
+                            <span class="step-num" aria-hidden="true">1.</span>
+                            <div class="step-content">
+                                <h3 data-i18n="step-1-title">Idea &amp; Reference</h3>
+                                <p data-i18n="step-1-desc">Analyzing concepts, proportions, and visual direction before starting.</p>
+                            </div>
+                        </div>
+                        <div class="pipeline-step step-2" data-step="2" role="tab" id="pipeline-tab-2" aria-controls="pipeline-panel" aria-selected="false" tabindex="-1">
+                            <span class="step-num" aria-hidden="true">2.</span>
+                            <div class="step-content">
+                                <h3 data-i18n="step-2-title">Blender Modeling</h3>
+                                <p data-i18n="step-2-desc">Crafting clean geometry, matching forms, and optimizing polycount.</p>
+                            </div>
+                        </div>
+                        <div class="pipeline-step step-3" data-step="3" role="tab" id="pipeline-tab-3" aria-controls="pipeline-panel" aria-selected="false" tabindex="-1">
+                            <span class="step-num" aria-hidden="true">3.</span>
+                            <div class="step-content">
+                                <h3 data-i18n="step-3-title">Texturing Stage</h3>
+                                <p data-i18n="step-3-desc">Unwrapping UVs and hand-painting or baking high-quality textures.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pipeline-viewport" id="pipeline-panel" role="tabpanel" aria-labelledby="pipeline-tab-1" tabindex="0">
+                        <img src="assets/images/services-section/realistic_tree_reference.jpg" alt="Reference image of a realistic tree used for modeling" class="pipeline-img img-1" decoding="async">
+                        <img src="assets/images/portfolio/realistic_tree_1_wireframe.png" alt="Blender viewport showing the wireframe topology of the tree model" class="pipeline-img img-2" loading="lazy" decoding="async">
+                        <img src="assets/images/portfolio/realistic_tree_1.png" alt="Textured final render of the realistic tree model" class="pipeline-img img-3" loading="lazy" decoding="async">
+                    </div>
+                </div>
+            </section>
+
+            <hr class="gradient">
+
+            <section id="portfolio" aria-labelledby="portfolio-heading">
+                <header class="section-header">
+                    <h2 id="portfolio-heading"><span data-i18n="portfolio-heading">My Showcase</span><span class="highlight">.</span></h2>
+                    <p><span data-i18n="portfolio-sub-1">A collection of my projects I made in </span><mark class="orange" data-i18n="portfolio-sub-2">Blender</mark>.</p>
+                </header>
+
+                <div class="bento-grid">
+                    <figure class="bento-item wide featured">
+                        <div class="card-media">
+                            <img src="assets/images/hero_render.jpg" alt="Textured final render of a green grassy field with distant mountains and clouds" decoding="async">
+                        </div>
+                        <figcaption class="card-info">
+                            <span class="category" data-i18n="category-env">Environment Design</span>
+                            <h3 data-i18n="portfolio-title-env">Grassy field rendered scene</h3>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="bento-item tall interactive-wire">
+                        <div class="card-media item-dual-layer">
+                            <img src="assets/images/portfolio/realistic_tree_1.png" alt="Final textured model render of a realistic oak tree" class="render-view" loading="lazy" decoding="async">
+                            <img src="assets/images/portfolio/realistic_tree_1_wireframe.png" alt="" aria-hidden="true" class="wire-view" loading="lazy" decoding="async">
+                        </div>
+                        <figcaption class="card-info">
+                            <span class="category" data-i18n="category-game-asset">Game asset</span>
+                            <h3 data-i18n="portfolio-title-tree">Realistic tree - oak</h3>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="bento-item tall">
+                        <div class="card-media">
+                            <img src="assets/images/sword_prop.jpg" alt="A close-up render of a crystalline greatsword" loading="lazy" decoding="async">
+                        </div>
+                        <figcaption class="card-info">
+                            <span class="category" data-i18n="category-game-asset">Prop Modeling</span>
+                            <h3 data-i18n="portfolio-title-sword">Crystalline Greatsword</h3>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="bento-item">
+                        <div class="card-media">
+                            <img src="assets/images/material_sphere.jpg" alt="A close-up render of a yellow duck with hand-painted textures" loading="lazy" decoding="async">
+                        </div>
+                        <figcaption class="card-info">
+                            <span class="category" data-i18n="category-texture-painting">Texture Painting</span>
+                            <h3 data-i18n="portfolio-title-duck">A rubber duck</h3>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="bento-item wide">
+                        <div class="card-media">
+                            <img src="assets/images/vehicle_render.jpg" alt="A render of a modern Mustang car" loading="lazy" decoding="async">
+                        </div>
+                        <figcaption class="card-info">
+                            <span class="category" data-i18n="category-tech">Hard Surface</span>
+                            <h3 data-i18n="portfolio-title-mustang">Mustang car</h3>
+                        </figcaption>
+                    </figure>
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer" id="contact" aria-label="Contact and social links">
+            <div class="footer-container">
+                <p class="alias-footer" data-i18n="footer-copy">&copy; 2026 Sampestas. All rights reserved.</p>
+                <nav class="social-links" aria-label="Social media">
+                    <a href="https://artstation.com" target="_blank" rel="noopener noreferrer">ArtStation</a>
+                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                </nav>
+            </div>
+        </footer>
+
+        <script type="module" src="scripts/main.js"></script>
+    </body>
+</html>
+</file>
+
+</files>

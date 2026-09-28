@@ -21,15 +21,15 @@
         transform: scale(1.04);
     }
 
-    .bento-item.interactive-wire:hover .card-media img:not(.wire-view) {
+    .bento-item.interactive-hover:hover .card-media img:not(.view-hover) {
         transform: scale(0.99);
     }
 
-    .interactive-wire:hover .render-view {
+    .interactive-hover:hover .view-default {
         opacity: 0;
     }
 
-    .interactive-wire:hover .wire-view {
+    .interactive-hover:hover .view-hover {
         opacity: 1;
     }
 
